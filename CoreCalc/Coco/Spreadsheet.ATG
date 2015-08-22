@@ -1,0 +1,253 @@
+// Corecalc and Funcalc, spreadsheet implementations
+
+// ----------------------------------------------------------------------
+// Copyright (c) 2006-2014 Peter Sestoft and Thomas S. Iversen
+
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use, copy,
+// modify, merge, publish, distribute, sublicense, and/or sell copies
+// of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+//  * The above copyright notice and this permission notice shall be
+//    included in all copies or substantial portions of the Software.
+
+//  * The software is provided "as is", without warranty of any kind,
+//    express or implied, including but not limited to the warranties of
+//    merchantability, fitness for a particular purpose and
+//    noninfringement.  In no event shall the authors or copyright
+//    holders be liable for any claim, damages or other liability,
+//    whether in an action of contract, tort or otherwise, arising from,
+//    out of or in connection with the software or the use or other
+//    dealings in the software.
+// ----------------------------------------------------------------------
+
+// Coco/R grammar for spreadsheet formulas
+
+// To build: 
+//   coco -namespace Corecalc Spreadsheet.ATG
+// or
+//   mono Coco.exe -namespace Corecalc Spreadsheet.ATG
+  
+//  - RaRefs in the R1C1 format
+//  - The string concatenation operator &
+//  - Numbers in scientific notation
+//  - Sheetreferences in the style: [Alpha{Alpha}!]Raref
+//  - ^ (power) operator (April 2006).
+//  - Equality operator now "=" as in Excel, not "==" (Nov 2008)
+//  - Functions may be called "LOG10" and similar (Nov 2008)
+//  - Unary minus on factors now works (Nov 2008)
+//  - Now accepts hard line breaks in quote cells (Aug 2011)
+//  - Now accepts datetime strings "2009-05-20T00:00:00.000"
+//  - Now accepts underscores and alphanumerics in function names
+//  - Now accepts dots in function names
+
+using System.Collections.Generic;
+
+COMPILER CellContents
+
+  private int col, row;
+  private Workbook workbook;
+  private Cell cell;
+  private static System.Globalization.NumberFormatInfo numberFormat = null;
+
+  static Parser() {
+    // Set US/UK decimal point, regardless of culture
+    System.Globalization.CultureInfo ci = 
+      System.Globalization.CultureInfo.InstalledUICulture;
+    numberFormat = (System.Globalization.NumberFormatInfo)ci.NumberFormat.Clone();
+    numberFormat.NumberDecimalSeparator = ".";
+  }  
+
+  public Cell ParseCell(Workbook workbook, int col, int row) {
+    this.workbook = workbook;
+    this.col = col; this.row = row;
+    Parse();
+    return errors.count == 0 ? cell : null;
+  }
+
+/*--------------------------------------------------------------------------*/
+CHARACTERS
+  letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".
+  uletter = letter + '_' + '.'.
+  atoi   = "ABCDEFGHIabcdefghi".
+  digit = "0123456789".
+  Alpha = letter + digit.
+  cr  = '\r'.
+  lf  = '\n'.
+  tab = '\t'.
+  exclamation = '!'.
+  dollar  = '$'.
+  newLine = cr + lf.
+  strchar    = ANY - '"' - '\\' - newLine.
+  char       = ANY - '\\'.
+  
+TOKENS
+  name       = uletter { (uletter | digit) } CONTEXT("(").
+  number     = 
+               digit { digit }
+               [                           /* optional fraction          */
+                [ "." digit { digit }]     /* optional fractional digits */
+                [ ( "E" | "e" )            /* optional exponent          */
+                  [ "+" | "-" ]            /* optional exponent sign     */
+                  digit { digit }
+                ]
+               ].
+  datetime   = digit digit digit digit "-" digit digit "-" digit digit 
+               [ "T" digit digit ":" digit digit ":" digit digit [ "." { digit } ] ].
+  sheetref   = Alpha { Alpha } exclamation.
+  raref      = [ dollar ] letter [ dollar ] digit { digit }
+             | [ dollar ] atoi letter [ dollar ] digit { digit }.
+  xmlssraref11= "RC".
+  xmlssraref12= "RC" digit { digit }.
+  xmlssraref13= "RC[" ["+"|"-"] digit { digit } "]".
+  xmlssraref21= "R" digit { digit } "C".
+  xmlssraref22= "R" digit { digit } "C" digit {digit}. 
+  xmlssraref23= "R" digit { digit } "C[" ["+"|"-"] digit { digit } "]".
+  xmlssraref31= "R[" ["+"|"-"] digit { digit } "]C".
+  xmlssraref32= "R[" ["+"|"-"] digit { digit } "]C" digit { digit }.
+  xmlssraref33= "R[" ["+"|"-"] digit { digit } "]C[" ["+"|"-"] digit { digit } "]".
+  string     = '"' { strchar } '"'.
+  quotecell  = "\'" { char }.
+  
+COMMENTS FROM "/*" TO "*/" NESTED
+COMMENTS FROM "//" TO cr lf
+
+IGNORE cr + lf + tab
+
+
+PRODUCTIONS
+/*------------------------------------------------------------------------*/
+AddOp<out String op>
+=                        (. op = "+"; .)
+  ( '+'
+  | '-'                  (. op = "-"; .)
+  | '&'                  (. op = "&"; .) 
+  ).
+
+LogicalOp<out String op>
+=                        (. op = "="; .)
+  ( "="
+  | "<>"                 (. op = "<>"; .)
+  | "<"                  (. op = "<";  .)
+  | "<="                 (. op = "<="; .) 
+  | ">"                  (. op = ">";  .)
+  | ">="                 (. op = ">="; .)
+  ).
+  
+/*------------------------------------------------------------------------*/
+Expr<out Expr e>         (. Expr e2; String op; e = null; .)
+= LogicalTerm<out e>
+  { LogicalOp<out op>
+    LogicalTerm<out e2>  (. e = FunCall.Make(op, new Expr[] { e, e2 }); .)
+  }
+  .
+
+LogicalTerm<out Expr e>  (. Expr e2; String op; e = null; .)
+= Term<out e>
+  { AddOp<out op>
+    Term<out e2>         (. e = FunCall.Make(op, new Expr[] { e, e2 }); .)
+  }
+  .
+
+/*------------------------------------------------------------------------*/
+Factor<out Expr e>       (. RARef r1, r2; Sheet s1 = null; double d; 
+                            bool sheetError = false; e = null; .)
+= Application<out e>
+  | 
+  ( 
+   | sheetref            (. s1 = workbook[t.val.Substring(0,t.val.Length-1)]; 
+                            if (s1 == null) sheetError = true;                .)
+  )
+   Raref<out r1> (       (. if (sheetError)
+                              e = new Error(ErrorValue.refError);
+                            else
+                              e = new CellRef(s1, r1);        .)
+    | ':' Raref<out r2>  (. if (sheetError)
+                              e = new Error(ErrorValue.refError);
+                            else
+                              e = new CellArea(s1, r1, r2);   .)
+   )
+  | Number<out d>        (. e = new NumberConst(d);         .)
+  | '-' Factor<out e>    (. if (e is NumberConst) 
+                              e = new NumberConst(-((NumberConst)e).value.value);
+                            else 
+                              e = FunCall.Make("NEG", new Expr[] { e }); 
+                         .)
+  | string               (. e = new TextConst(t.val.Substring(1, t.val.Length-2)); .)
+  | '(' Expr<out e> ')'
+  .
+  
+/*------------------------------------------------------------------------*/
+PowFactor<out Expr e>    (. Expr e2; .)
+= Factor<out e>
+  { '^'
+    Factor<out e2>       (. e = FunCall.Make("^", new Expr[] { e, e2 } ); .)
+  }
+  .
+/*------------------------------------------------------------------------*/
+
+Raref<out RARef raref>   (. raref = null;.)         
+= raref                  (. raref = new RARef(t.val, col, row); .)
+ | xmlssraref11           (. raref = new RARef(t.val); .)
+ | xmlssraref12           (. raref = new RARef(t.val); .)
+ | xmlssraref13           (. raref = new RARef(t.val); .)
+ | xmlssraref21           (. raref = new RARef(t.val); .)
+ | xmlssraref22           (. raref = new RARef(t.val); .)
+ | xmlssraref23           (. raref = new RARef(t.val); .)
+ | xmlssraref31           (. raref = new RARef(t.val); .)
+ | xmlssraref32           (. raref = new RARef(t.val); .)
+ | xmlssraref33           (. raref = new RARef(t.val); .)
+.
+
+/*------------------------------------------------------------------------*/
+Number<out double d>     (. d = 0.0;                      .)
+= number                 (. d = double.Parse(t.val, numberFormat); .)
+  .
+/*------------------------------------------------------------------------*/
+Application<out Expr e>  (. String s; Expr[] es; e = null; .)
+= Name<out s> '(' 
+  ( ')'                  (. e = FunCall.Make(s.ToUpper(), new Expr[0]); .)
+    | Exprs1<out es> ')' (. e = FunCall.Make(s.ToUpper(), es); .)
+  )   
+.
+/*------------------------------------------------------------------------*/
+Exprs1<out Expr[] es>    (. Expr e1, e2; 
+                            List<Expr> elist = new List<Expr>(); 
+                        .)
+= ( Expr<out e1>         (. elist.Add(e1); .)
+    { (';' | ',') Expr<out e2>   (. elist.Add(e2); .)
+    }
+  )                      (. es = elist.ToArray();  .)
+.
+/*------------------------------------------------------------------------*/
+Name<out String s>
+= name                   (. s = t.val; .)
+.
+/*------------------------------------------------------------------------*/
+MulOp<out String op>
+=                        (. op = "*"; .)
+  ( '*'
+  | '/'                  (. op = "/"; .)
+  ).
+/*------------------------------------------------------------------------*/
+Term<out Expr e>         (. Expr e2; String op; .)
+= PowFactor<out e>
+  { MulOp<out op>
+    PowFactor<out e2>    (. e = FunCall.Make(op, new Expr[] { e, e2 } ); .)
+  }.
+/*------------------------------------------------------------------------*/
+CellContents             (. Expr e; double d;     .)
+= ( '=' Expr<out e>      (. this.cell = Formula.Make(workbook, e); .)
+  | quotecell            (. this.cell = new QuoteCell(t.val.Substring(1)); .)
+  | string               (. this.cell = new TextCell(t.val.Substring(1, t.val.Length-2)); .)
+  | datetime             (. long ticks = DateTime.Parse(t.val).Ticks;
+                            double time = NumberValue.DoubleFromDateTimeTicks(ticks);
+                            this.cell = new NumberCell(time);
+                         .)
+  | Number<out d>        (. this.cell = new NumberCell(d);  .)
+  | '-' Number<out d>    (. this.cell = new NumberCell(-d);  .)
+  ).
+END CellContents.

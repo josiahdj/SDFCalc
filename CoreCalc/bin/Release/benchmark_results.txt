@@ -1,0 +1,2 @@
+=== Benchmark workbook called: 
+[Workbook full recalculation rebuild] Average of the 10 runs: 2,955.10 ms

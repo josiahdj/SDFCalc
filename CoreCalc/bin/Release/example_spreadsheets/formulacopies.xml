@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Peter Sestoft</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2011-07-24T11:49:32Z</Created>
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>10485</WindowHeight>
+  <WindowWidth>20955</WindowWidth>
+  <WindowTopX>360</WindowTopX>
+  <WindowTopY>105</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="15" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+15"><Data ss:Type="Number">93</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+15"><Data ss:Type="Number">108</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">156</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">186</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">216</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">312</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">372</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">432</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">513</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">279</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C2:R[-1]C[-3])"><Data ss:Type="Number">603</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">171</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">279</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">624</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">744</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">864</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">1197</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">651</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C2:R[-1]C[-3])"><Data ss:Type="Number">1407</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">234</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">513</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">837</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">1248</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">1488</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">2565</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C[-3]:R[-1]C2)"><Data ss:Type="Number">1395</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C2:R[-1]C[-3])"><Data ss:Type="Number">3015</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">546</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">1197</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">1953</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">2496</Data></Cell>
+    <Cell ss:Formula="=R[-1]C*2"><Data ss:Type="Number">2976</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">1170</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">2565</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">4185</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">2418</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">5301</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R[-2]C[-7])"><Data ss:Type="Number">8649</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Index="9" ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R1C1"><Data ss:Type="Number">78</Data></Cell>
+    <Cell ss:Index="9" ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+    <Cell ss:Formula="=R5C3"><Data ss:Type="Number">1728</Data></Cell>
+   </Row>
+   <Row ss:Index="13" ss:AutoFitHeight="0">
+    <Cell ss:Index="3" ss:ArrayRange="RC:R[2]C[2]"
+     ss:Formula="=TRANSPOSE(R[-12]C[-2]:R[-10]C)"><Data ss:Type="Number">78</Data></Cell>
+    <Cell><Data ss:Type="Number">156</Data></Cell>
+    <Cell><Data ss:Type="Number">312</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="Number">93</Data></Cell>
+    <Cell><Data ss:Type="Number">186</Data></Cell>
+    <Cell><Data ss:Type="Number">372</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="Number">108</Data></Cell>
+    <Cell><Data ss:Type="Number">216</Data></Cell>
+    <Cell><Data ss:Type="Number">432</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+     <RangeSelection>R13C3:R15C5</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

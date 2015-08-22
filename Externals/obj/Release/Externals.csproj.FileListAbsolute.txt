@@ -1,0 +1,5 @@
+Z:\sdfcalc2007\SDFCalc\Externals\bin\Release\Externals.dll
+Z:\sdfcalc2007\SDFCalc\Externals\bin\Release\Externals.pdb
+Z:\sdfcalc2007\SDFCalc\Externals\obj\Release\Externals.dll
+Z:\sdfcalc2007\SDFCalc\Externals\obj\Release\Externals.pdb
+Z:\sdfcalc2007\SDFCalc\Externals\obj\Release\Externals.csprojResolveAssemblyReference.cache

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Peter Sestoft</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2013-12-28T13:48:23Z</Created>
+  <LastSaved>2013-12-28T14:06:15Z</LastSaved>
+  <Version>15.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7020</WindowHeight>
+  <WindowWidth>17235</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="10" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row>
+    <Cell><Data ss:Type="Number">0.5</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50000500000000003</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50001000005000007</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50001500015000055</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50002000030000204</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50002500050000509</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50003000075001014</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50003500105001764</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50004000140002813</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C*1.00001"><Data ss:Type="Number">0.50004500180004219</Data></Cell>
+    <Cell ss:Formula="=SUM(R1C1:R10C1)"><Data ss:Type="Number">5.0002250060001057</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Selected/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="10" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row>
+    <Cell><Data ss:Type="Number">0.5</Data></Cell>
+    <Cell ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R1C1"><Data ss:Type="Number">0.5</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

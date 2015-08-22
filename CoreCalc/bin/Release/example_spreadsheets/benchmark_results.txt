@@ -1,0 +1,6 @@
+=== Benchmark workbook called: 
+[Workbook standard recalculation] Average of the 20 runs: 33.90 ms
+=== Benchmark workbook called: 
+[Workbook standard recalculation] Average of the 20 runs: 33.50 ms
+=== Benchmark workbook called: 
+[Workbook standard recalculation] Average of the 100 runs: 33.76 ms

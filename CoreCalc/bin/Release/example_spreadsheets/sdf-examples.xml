@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Peter Sestoft</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2007-09-20T08:56:00Z</Created>
+  <LastSaved>2008-12-14T19:49:52Z</LastSaved>
+  <Company>IT University of Copenhagen</Company>
+  <Version>11.5606</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8955</WindowHeight>
+  <WindowWidth>11355</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>15</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21" ss:Name="Hyperlink">
+   <Font ss:Color="#0000FF" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s23" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom"/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s24">
+   <NumberFormat ss:Format="0.00000000000000000"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s26">
+   <NumberFormat ss:Format="Scientific"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="@NormalDist">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="62" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="108.75"/>
+   <Column ss:Width="107.25"/>
+   <Column ss:Width="69.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="112.5"/>
+   <Row>
+    <Cell><Data ss:Type="String">Some function sheet examples</Data></Cell>
+    <Cell ss:Index="3" ss:StyleID="s23" ss:HRef="mailto:sestoft@itu.dk%202007-09-25"><Data
+      ss:Type="String">sestoft@itu.dk 2007-09-25</Data></Cell>
+   </Row>
+   <Row ss:Index="3">
+    <Cell><Data ss:Type="String">The distribution function of the Gaussian distribution N(0,1)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Algorithm 66 in Statlib, based on alg. 5666 from JF Hart: Computer approximations, 1968</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell><Data ss:Type="String">z = </Data></Cell>
+    <Cell><Data ss:Type="Number">-5</Data><Comment ss:Author="Peter Sestoft"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         html:Size="8" html:Color="#000000">This is the input cell&#10;</Font></B></ss:Data></Comment></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">p = </Data></Cell>
+    <Cell ss:StyleID="s24" ss:Formula="=IF(R[-1]C&lt;0, R[4]C, 1-R[4]C)"><Data
+      ss:Type="Number">2.8665157189233346E-7</Data><Comment
+      ss:Author="Peter Sestoft"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" html:Size="8" html:Color="#000000">This is the output cell</Font></B></ss:Data></Comment></Cell>
+    <Cell ss:StyleID="s24"><Comment ss:Author="Peter Sestoft"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         html:Size="8" html:Color="#000000">Comparison with the Excel builtin NORMDIST function</Font></B></ss:Data></Comment></Cell>
+    <Cell ss:Formula="=define(&quot;normdistcdf&quot;, RC[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">zabs =</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-2]C)"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">expntl =</Data></Cell>
+    <Cell ss:Formula="=EXP(-1*R[-1]C*R[-1]C/2)"><Data ss:Type="Number">3.7266531720786709E-6</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">pdf = </Data></Cell>
+    <Cell ss:Formula="=R[-1]C/SQRT(2*PI())"><Data ss:Type="Number">1.4867195147342979E-6</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">p' =</Data></Cell>
+    <Cell
+     ss:Formula="=IF(R[-3]C&gt;37,0,IF(R[-3]C&lt;7.071,R[-2]C*R[3]C/R[3]C[2],R[-1]C/(R[-3]C+1/(R[-3]C+2/(R[-3]C+3/(R[-3]C+4/(R[-3]C+0.65)))))))"><Data
+      ss:Type="Number">2.8665157189233346E-7</Data></Cell>
+   </Row>
+   <Row ss:Index="13">
+    <Cell ss:StyleID="s25"><Data ss:Type="String">pi</Data></Cell>
+    <Cell ss:Index="3" ss:StyleID="s25"><Data ss:Type="String">qi</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">220.206867912376</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">15090.76535897376</Data></Cell>
+    <Cell><Data ss:Type="Number">440.413735824752</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">196189.56987697084</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">221.21359616993101</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">2974.1116982122767</Data></Cell>
+    <Cell><Data ss:Type="Number">793.82651251994798</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">39149.831228229217</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">112.07929149787</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">550.57962040846917</Data></Cell>
+    <Cell><Data ss:Type="Number">637.333633378831</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">7671.2009431418537</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">33.912866078382997</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">87.700065782119822</Data></Cell>
+    <Cell><Data ss:Type="Number">296.56424877967299</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">1406.7734619526045</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.3739622035316499</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">10.757439940747364</Data></Cell>
+    <Cell><Data ss:Type="Number">86.780732202945998</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">222.04184263458632</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">0.70038306444368803</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">0.87669554744314304</Data></Cell>
+    <Cell><Data ss:Type="Number">16.064177579206898</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">27.052222086328058</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.5262496599891002E-2</Data></Cell>
+    <Cell ss:Formula="=RC[-1]"><Data ss:Type="Number">3.5262496599891002E-2</Data></Cell>
+    <Cell><Data ss:Type="Number">1.7556671631826399</Data></Cell>
+    <Cell ss:Formula="=RC[-1]+R8C2*R[1]C"><Data ss:Type="Number">2.1976089014242319</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3"><Data ss:Type="Number">8.8388347648318405E-2</Data></Cell>
+    <Cell ss:Formula="=RC[-1]"><Data ss:Type="Number">8.8388347648318405E-2</Data></Cell>
+   </Row>
+   <Row ss:Index="23">
+    <Cell><Data ss:Type="String">The inverse distribution function of the Gaussian distribution N(0,1)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Algorithm AS241 from Applied Statistics 37, 3, 1988</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">This agrees well with the R qnorm() function and hence seems more precise than Excel's built-in function</Data></Cell>
+   </Row>
+   <Row ss:Index="27">
+    <Cell><Data ss:Type="String">p =</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="Number">0.49</Data><Comment
+      ss:Author="Peter Sestoft"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" html:Size="8" html:Color="#000000">Peter Sestoft:</Font></B><Font
+        html:Face="Tahoma" html:Size="8" html:Color="#000000">&#10;This is the input cell, a probability in the closed interval [0,1]</Font></ss:Data></Comment></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">z =</Data></Cell>
+    <Cell ss:StyleID="s24"
+     ss:Formula="=IF(ABS(R29C2)&lt;=0.425, R29C2*R40C2/R40C4, R31C2)"><Data
+      ss:Type="Number">-2.5068908258711046E-2</Data><Comment
+      ss:Author="Peter Sestoft"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" html:Size="8" html:Color="#000000">Peter Sestoft:</Font></B><Font
+        html:Face="Tahoma" html:Size="8" html:Color="#000000">&#10;This is the output cell, containing the number of standard deviations</Font></ss:Data></Comment></Cell>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:Formula="=define(&quot;invnormdistcdf&quot;,RC[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">q = </Data></Cell>
+    <Cell ss:StyleID="s24" ss:Formula="=R[-2]C-0.5"><Data ss:Type="Number">-1.0000000000000009E-2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">r =</Data></Cell>
+    <Cell ss:StyleID="s24" ss:Formula="=0.180625-R[-1]C*R[-1]C"><Data
+      ss:Type="Number">0.18052500000000002</Data></Cell>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">z' = </Data></Cell>
+    <Cell ss:Formula="=IF(R43C2&lt;=5,R53C2/R53C4, R62C2/R62C4)*IF(R[-2]C&lt;0, -1, 1)"><Data
+      ss:Type="Number">-2.50689292653569E-2</Data></Cell>
+   </Row>
+   <Row ss:Index="33">
+    <Cell><Data ss:Type="Number">2509.0809287301199</Data></Cell>
+    <Cell ss:Formula="=RC[-1]*R30C2"><Data ss:Type="Number">452.95183465900493</Data></Cell>
+    <Cell><Data ss:Type="Number">5226.4952788528499</Data></Cell>
+    <Cell ss:Formula="=RC[-1]*R30C2"><Data ss:Type="Number">943.51306021491087</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">33430.575583588099</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">6116.8237871790589</Data></Cell>
+    <Cell><Data ss:Type="Number">28729.085735721899</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">5356.6458976364929</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">67265.770927008707</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">13247.392910778748</Data></Cell>
+    <Cell><Data ss:Type="Number">39307.895800092701</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">8063.066389982564</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">45921.953931549797</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">10681.546338711361</Data></Cell>
+    <Cell><Data ss:Type="Number">21213.794301586498</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">5285.2052763455058</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">13731.693765509401</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">4407.2001698144541</Data></Cell>
+    <Cell><Data ss:Type="Number">5394.1960214247501</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">1927.8989192799754</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1971.59095030655</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">1151.5312669598445</Data></Cell>
+    <Cell><Data ss:Type="Number">687.18700749205698</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">472.08838693052121</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">133.14166789178401</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">231.91558156409025</Data></Cell>
+    <Cell><Data ss:Type="Number">42.313330701600897</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R30C2"><Data ss:Type="Number">92.862370075538848</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.3871328727963599</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">235.30271443688662</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">93.862370075538848</Data></Cell>
+   </Row>
+   <Row ss:Index="42">
+    <Cell><Data ss:Type="String">r' =</Data></Cell>
+    <Cell ss:Formula="=IF(R[-13]C&lt;0, R[-15]C, 1-R[-15]C)"><Data ss:Type="Number">0.49</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">r'' =</Data></Cell>
+    <Cell ss:Formula="=SQRT(-1*LN(R[-1]C))"><Data ss:Type="Number">0.84460043090059145</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">r''' = </Data></Cell>
+    <Cell ss:Formula="=IF(R43C2&lt;=5, R43C2-1.6, R43C2-5)"><Data ss:Type="Number">-0.75539956909940864</Data></Cell>
+   </Row>
+   <Row ss:Index="46">
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">7.7454501427834095E-4</Data></Cell>
+    <Cell ss:StyleID="s26" ss:Formula="=RC[-1]*R44C2"><Data ss:Type="Number">-5.8509097003395412E-4</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">1.0507500716444101E-9</Data></Cell>
+    <Cell ss:StyleID="s26" ss:Formula="=RC[-1]*R44C2"><Data ss:Type="Number">-7.9373615135136011E-10</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">2.2723844989269101E-2</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.672360524652803E-2</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">5.47593808499534E-4</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-4.136515273941054E-4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">0.24178072517745</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.17000805141857239</Data></Cell>
+    <Cell><Data ss:Type="Number">1.51986665636164E-2</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.1168593987490599E-2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.27045825245236</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.83127960767628073</Data></Cell>
+    <Cell><Data ss:Type="Number">0.14810397642747999</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.10344092888963072</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3.6478483247632001</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-2.1276347952263333</Data></Cell>
+    <Cell><Data ss:Type="Number">0.68976733498510001</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.44291071451612235</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.7694972214606901</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-2.75106130749676</Data></Cell>
+    <Cell><Data ss:Type="Number">1.6763848301838</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.93176581547063786</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4.6303378461565403</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.4196046875222261</Data></Cell>
+    <Cell><Data ss:Type="Number">2.0531916266377501</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.84712457453259138</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.4234371107496799</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">3.8324232274538073E-3</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">0.15287542546740862</Data></Cell>
+   </Row>
+   <Row ss:Index="55">
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">2.0103343992922799E-7</Data></Cell>
+    <Cell ss:StyleID="s26" ss:Formula="=RC[-1]*R44C2"><Data ss:Type="Number">-1.5186057389711067E-7</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">2.0442631033899298E-15</Data></Cell>
+    <Cell ss:StyleID="s26" ss:Formula="=RC[-1]*R44C2"><Data ss:Type="Number">-1.5442354674265729E-15</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">2.7115555687434801E-5</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-2.03683636700942E-5</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">1.4215117583164401E-7</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.0738093580368334E-7</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.2426609473880699E-3</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-9.2331929105396167E-4</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">1.8463183175100501E-5</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.3865965102038776E-5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">2.65321895265761E-2</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.9344929541036095E-2</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="Number">7.8686913114561297E-4</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-5.8392625854179455E-4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">0.29656057182850398</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.20940857673156904</Data></Cell>
+    <Cell><Data ss:Type="Number">1.4875361290850601E-2</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.0795743865218265E-2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.78482653991729</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-1.1900700505419617</Data></Cell>
+    <Cell><Data ss:Type="Number">0.136929880922735</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-9.52816727819739E-2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">5.4637849111641099</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-3.2283623641677095</Data></Cell>
+    <Cell><Data ss:Type="Number">0.59983220655588698</Data></Cell>
+    <Cell ss:Formula="=(R[-1]C+RC[-1])*R44C2"><Data ss:Type="Number">-0.38113725580169061</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">6.6579046435010998</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">3.4295422793333903</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+RC[-1]"><Data ss:Type="Number">0.61886274419830944</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>29</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="20" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="60.75"/>
+   <Row>
+    <Cell><Data ss:Type="String">Testing and benchmarking NORMDISTCDF and INVNORMDISTCDF</Data></Cell>
+   </Row>
+   <Row ss:Index="3">
+    <Cell ss:Formula="=normdistcdf(-3)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=invnormdistcdf(RC[-1])"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">1.3498980316301035E-3</Data></Cell>
+    <Cell><Data ss:Type="Number">-3</Data></Cell>
+   </Row>
+   <Row ss:Index="7">
+    <Cell><Data ss:Type="Number">1000</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="Number">1000</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">NORMDISTCDF</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">INVNORMDISTCDF</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=closure(&quot;normdistcdf&quot;,-3)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=closure(&quot;invnormdistcdf&quot;,0.03)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="11">
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=benchmark(R9C,R7C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="20">
+    <Cell ss:Formula="=AVERAGE(R[-9]C:R[-2]C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4" ss:Formula="=AVERAGE(R[-9]C:R[-2]C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>3</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

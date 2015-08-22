@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Peter Sestoft</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2010-05-29T16:06:53Z</Created>
+  <LastSaved>2010-06-14T14:31:02Z</LastSaved>
+  <Company>ITU</Company>
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>11640</WindowHeight>
+  <WindowWidth>15480</WindowWidth>
+  <WindowTopX>-75</WindowTopX>
+  <WindowTopY>-75</WindowTopY>
+  <Date1904/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana" x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="@Functions">
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="112" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54">
+   <Row>
+    <Cell><Data ss:Type="String" x:Ticked="1">Test cases for partial evaluation of sheet-defined functions</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="String" x:Ticked="1">2013-03-10</Data></Cell>
+   </Row>
+   <Row ss:Index="3">
+    <Cell ss:Formula="=AND(R[11]C[6],R[12]C[6])"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="7">
+    <Cell><Data ss:Type="String">Static evaluation of IF, inlining of constants, non-inlining of expressions:</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">y</Data></Cell>
+    <Cell><Data ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R[-2]C*R[-2]C/2"><Data ss:Type="Number">12.5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=SIN(R[-2]C)"><Data ss:Type="Number">-0.27941549819892586</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=IF(R[-4]C&gt;5, R[-2]C+R[-2]C, R[-1]C*R[-1]C)"><Data
+      ss:Type="Number">7.8073020633753945E-2</Data></Cell>
+    <Cell ss:Formula="=define(&quot;if_1&quot;, RC[-1],R[-4]C[-1],R[-3]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="14">
+    <Cell ss:Index="2"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;if_1&quot;,RC[-1],NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=IF_1(RC[-3],10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=(RC[-3]=RC[-2])"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;if_1&quot;,RC[-1],NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=IF_1(RC[-3],10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=(RC[-3]=RC[-2])"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="17">
+    <Cell><Data ss:Type="String">Residual IF, residualization of RAND():</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+    <Cell><Data ss:Type="Number">0.4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">y</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=IF(RAND()&lt;R[-2]C, R[-2]C*10, R[-1]C*R[-2]C)"><Data
+      ss:Type="Number">4</Data></Cell>
+    <Cell ss:Formula="=define(&quot;if2&quot;, RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="22">
+    <Cell ss:Index="2" ss:Formula="=specialize(&quot;if2&quot;, 0.5, NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1], 25)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="24">
+    <Cell><Data ss:Type="String">Same with CHOOSE:</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+    <Cell><Data ss:Type="Number">0.4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">y</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"
+     ss:Formula="=CHOOSE(2-(RAND()&lt;R[-2]C), R[-2]C*10, R[-1]C*R[-2]C)"><Data
+      ss:Type="Number">2</Data></Cell>
+    <Cell ss:Formula="=define(&quot;choose1&quot;, RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="29">
+    <Cell ss:Index="2" ss:Formula="=specialize(&quot;choose1&quot;, 0.5, NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1], 25)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="31">
+    <Cell><Data ss:Type="String">Specialization wrt function value, residualize static function values, test caching</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">f</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=apply(R[-2]C,R[-1]C)+R[-1]C"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;applyadd&quot;, RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="36">
+    <Cell ss:Index="2"
+     ss:Formula="=specialize(&quot;applyadd&quot;,closure(&quot;if2&quot;, 0.7, NA()),NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],5)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="38">
+    <Cell><Data ss:Type="String">Specialization wrt array value, residualize static array value, test caching</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">table</Data></Cell>
+    <Cell ss:Formula="=tabulate(closure(&quot;add&quot;,NA(),NA()),4,4)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">index</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=INDEX(R[-2]C,R[-1]C,R[-1]C)"><Data
+      ss:Type="Error">#REF!</Data></Cell>
+    <Cell ss:Formula="=define(&quot;dynamicindex&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="43">
+    <Cell ss:Index="2"
+     ss:Formula="=specialize(&quot;dynamicindex&quot;,tabulate(closure(&quot;add&quot;,NA(),NA()),4,4),NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],3)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="45">
+    <Cell><Data ss:Type="String">Specialization wrt array value, inline static array value because of static index</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">table</Data></Cell>
+    <Cell ss:Formula="=tabulate(closure(&quot;add&quot;,NA(),NA()),4,4)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">scale</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=INDEX(R[-2]C,2,3)*R[-1]C"><Data ss:Type="Error">#REF!</Data></Cell>
+    <Cell ss:Formula="=define(&quot;staticindex&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="50">
+    <Cell ss:Index="2"
+     ss:Formula="=specialize(&quot;staticindex&quot;,tabulate(closure(&quot;add&quot;,NA(),NA()),4,4),NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],100)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="52">
+    <Cell><Data ss:Type="String">Partial evaluation in multiple stages</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">a</Data></Cell>
+    <Cell><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">b</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">c</Data></Cell>
+    <Cell><Data ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R[-3]C+R[-2]C+R[-1]C"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:Formula="=define(&quot;add3&quot;, RC[-1],R[-3]C[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">count = </Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="6" ss:Formula="=benchmark(closure(&quot;add3&quot;,11,23,32),R56C6)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=specialize(&quot;add3&quot;,11,NA(),NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],23, 32)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="6" ss:Formula="=benchmark(closure(RC[-4],23,32),R56C6)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=specialize(R[-1]C, 23, NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],32)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="6" ss:Formula="=benchmark(closure(RC[-4],32),R56C6)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=specialize(R[-1]C, 32)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1])"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="6" ss:Formula="=benchmark(RC[-4],R56C6)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="62">
+    <Cell><Data ss:Type="String">Benchmarking specialized functions</Data></Cell>
+    <Cell ss:Index="3"><Data ss:Type="String">count =</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">101</Data></Cell>
+    <Cell ss:Formula="=closure(&quot;add3&quot;,RC[-1],R[1]C[-1],R[2]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(RC[-1],R62C4)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">201</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;add3&quot;,R[-1]C[-1],NA(),NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(RC[-1],RC[-2],R[1]C[-2]),R62C4)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"><Data ss:Type="Number">301</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;add3&quot;,R[-2]C[-1],R[-1]C[-1],NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(RC[-1],RC[-2]),R62C4)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3"
+     ss:Formula="=specialize(&quot;add3&quot;,R[-3]C[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(RC[-1]),R62C4)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="68">
+    <Cell><Data ss:Type="String">Auxiliaries, also for making van der Corput numbers</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ADD(x,y)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">y</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=R[-2]C+R[-1]C"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:Formula="=define(&quot;add&quot;, RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="74">
+    <Cell><Data ss:Type="String">NEXTVDC(x,v)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">x</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">v</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"
+     ss:Formula="=map(hcat(0,R[-1]C), closure(&quot;add&quot;,R[-2]C,NA()))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;nextvdc&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="79">
+    <Cell><Data ss:Type="String">NTHVDC(n)</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:Formula="=INDEX(Data!R[-68]C,1,R[-1]C)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;nthvdc&quot;,RC[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="84">
+    <Cell ss:Index="5"><Data ss:Type="String">m =</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ACKER1(m,n)</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">n = </Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">count =</Data></Cell>
+    <Cell><Data ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">m =</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+    <Cell
+     ss:Formula="=IF(R[-2]C=0,R[-1]C+1,IF(R[-1]C=0,ACKer1(R[-2]C-1,1),ACKer1(R[-2]C-1,ACKer1(R[-2]C,R[-1]C-1))))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;acker1&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="5" ss:Formula="=ACKer1(R84C6,R85C6)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(&quot;acker1&quot;,R84C6,R85C6),R85C8)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;acker1&quot;,R84C6,NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],R85C6)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(RC[-2],R85C6),R85C8)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">res = </Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="5" ss:Formula="=acker2(R84C6,R85C6)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(&quot;acker2&quot;,R84C6,R85C6),R85C8)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=specialize(&quot;acker2&quot;,R84C6,NA())"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1],R85C6)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=benchmark(closure(RC[-2],R85C6),R85C8)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ACKER2(m,n)</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">m =</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+    <Cell
+     ss:Formula="=IF(R[-2]C=0,R[-1]C+1,acker2(R[-2]C-1,IF(R[-1]C=0,1,acker2(R[-2]C,R[-1]C-1))))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;acker2&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">res = </Data></Cell>
+   </Row>
+   <Row ss:Index="95">
+    <Cell><Data ss:Type="String">Sampling from the exponential distribution, with arrival rate p</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">EXPSAMPLE(P,N)</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">p = </Data></Cell>
+    <Cell><Data ss:Type="Number">0.15</Data></Cell>
+    <Cell><Data ss:Type="String">count =</Data></Cell>
+    <Cell><Data ss:Type="Number">500</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">p =</Data></Cell>
+    <Cell><Data ss:Type="Number">0.2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="6" ss:Formula="=expsample(R96C6, 1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="8" ss:Formula="=benchmark(closure(&quot;expsample&quot;, R96C6,1),R96C8)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="2"
+     ss:Formula="=IF(R[-2]C&lt;=0, err(&quot;p must be positive&quot;), IF(RAND()&lt;R[-2]C,R[-1]C,expsample(R[-2]C,R[-1]C+1)))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;expsample&quot;,RC[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="5" ss:Formula="=specialize(&quot;expsample&quot;,R96C6,1)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(RC[-1])"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="8" ss:Formula="=benchmark(RC[-3],R96C8)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="101">
+    <Cell><Data ss:Type="String">Countdown factorial, Weise et al 1991, page 172</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+    <Cell><Data ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">res =</Data></Cell>
+    <Cell ss:Formula="=IF(R[-1]C=0, 1, R[-1]C * facd(R[-1]C-1))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;facd&quot;,RC[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="105">
+    <Cell><Data ss:Type="String">Countup factorial, Weise et al 1991, page 173</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">n = </Data></Cell>
+    <Cell><Data ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">res = </Data></Cell>
+    <Cell ss:Formula="=facloop(R[-1]C,1,1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;facu&quot;,RC[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="109">
+    <Cell><Data ss:Type="String">n =</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">m =</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ans = </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">res = </Data></Cell>
+    <Cell
+     ss:Formula="=IF(R[-2]C&gt;R[-3]C,R[-1]C,facloop(R[-3]C,R[-2]C+1,R[-2]C*R[-1]C))"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=define(&quot;facloop&quot;,RC[-1],R[-3]C[-1],R[-2]C[-1],R[-1]C[-1])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>10</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+     <ActiveCol>6</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+   <x:PageLayoutZoom>0</x:PageLayoutZoom>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="ExpSamples">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="23" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54">
+   <Row>
+    <Cell><Data ss:Type="String">lambda =</Data></Cell>
+    <Cell><Data ss:Type="Number">0.15</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">average = </Data></Cell>
+    <Cell ss:Formula="=AVERAGE(R4C1:R23C10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=specialize(&quot;expsample&quot;,R1C2,1)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">max = </Data></Cell>
+    <Cell ss:Formula="=MAX(R4C1:R23C10)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="4">
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=apply(R2C1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>1</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Data">
+  <Table ss:ExpandedColumnCount="2" ss:ExpandedRowCount="13" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="54">
+   <Row>
+    <Cell><Data ss:Type="String">Making van der Corput numbers</Data></Cell>
+   </Row>
+   <Row ss:Index="3">
+    <Cell><Data ss:Type="String">Base 2</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">0.5</Data></Cell>
+    <Cell ss:Formula="=hcat(RC[-1])"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">0.25</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">0.125</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">6.25E-2</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">3.125E-2</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">1.5625E-2</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">7.8125E-3</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">3.90625E-3</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">1.953125E-3</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C/2"><Data ss:Type="Number">9.765625E-4</Data></Cell>
+    <Cell ss:Formula="=hcat(R[-1]C,nextvdc(RC[-1],R[-1]C))"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>10</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+   <x:PageLayoutZoom>0</x:PageLayoutZoom>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

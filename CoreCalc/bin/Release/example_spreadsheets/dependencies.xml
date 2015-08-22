@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Peter Sestoft</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2011-12-13T07:39:10Z</Created>
+  <LastSaved>2011-12-13T13:30:02Z</LastSaved>
+  <Company>ITU</Company>
+  <Version>12.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>16580</WindowHeight>
+  <WindowWidth>28600</WindowWidth>
+  <WindowTopX>-100</WindowTopX>
+  <WindowTopY>680</WindowTopY>
+  <Date1904/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Verdana"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="@Sheet1">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="14" x:FullColumns="1"
+   x:FullRows="1">
+   <Row>
+    <Cell ss:Formula="=define(&quot;foo_1&quot;,R[3]C,R[1]C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=CLOSURE(&quot;foo_4&quot;,4)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=IF(R[-2]C&lt;1,FOO_2(2)+FOO_3(3)+FOO_4(4),R[-1]C)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Index="3" ss:Formula="=FOO_1(90)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=FOO_2(90)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=FOO_3(90)"><Data ss:Type="Error">#NAME?</Data></Cell>
+    <Cell ss:Formula="=FOO_4(90)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:Index="3" ss:Formula="=define(&quot;foo_2&quot;,R[2]C,R[1]C)"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3"><Data ss:Type="Number">20.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Index="3" ss:Formula="=R[-1]C+8+IF(R[-1]C&lt;1,FOO_1(1)+FOO_3(3),42)"><Data
+      ss:Type="Number">70.0</Data></Cell>
+   </Row>
+   <Row ss:Index="10">
+    <Cell ss:Formula="=define(&quot;foo_3&quot;,R[2]C,R[1]C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=R[-1]C+8+IF(R[-1]C&lt;1,FOO_1(1)+FOO_2(2), 42)"><Data
+      ss:Type="Number">70.0</Data></Cell>
+   </Row>
+   <Row ss:Index="14">
+    <Cell ss:Formula="=CLOSURE(&quot;FOO_4&quot;)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>0</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>5</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="@Sheet2">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="6" x:FullColumns="1"
+   x:FullRows="1">
+   <Row>
+    <Cell ss:Formula="=define(&quot;foo_4&quot;,R[3]C,R[1]C)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">20.0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:Formula="=CLOSURE(&quot;foo_1&quot;,1)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row>
+    <Cell
+     ss:Formula="=R[-2]C+8+IF(R[-2]C&lt;1,FOO_1(1)+FOO_2(2)+FOO_3(3)+apply(R[-1]C),42)"><Data
+      ss:Type="Number">70.0</Data></Cell>
+    <Cell ss:Index="3" ss:Formula="=FOO_4(30)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:Index="6">
+    <Cell ss:Formula="=CLOSURE(&quot;FOO_1&quot;)"><Data ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

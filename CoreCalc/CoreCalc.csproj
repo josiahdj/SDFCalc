@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39D0A789-C2C9-48DD-8629-DE81C653C096}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoreCalc</RootNamespace>
+    <AssemblyName>Funcalc</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClrTest.Reflection.ILReader">
+      <HintPath>..\dlls\ClrTest.Reflection.ILReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ClrTest.Reflection.ILVisualizer">
+      <HintPath>..\dlls\ClrTest.Reflection.ILVisualizer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Benchmarks\Benchmarks.cs" />
+    <Compile Include="Cells.cs" />
+    <Compile Include="CellAddressing.cs" />
+    <Compile Include="Expressions.cs" />
+    <Compile Include="Coco\Parser.cs" />
+    <Compile Include="Coco\Scanner.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="GUI\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SDF.Designer.cs">
+      <DependentUpon>SDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\WorkbookIO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet.cs" />
+    <Compile Include="Funcalc\CellsInFuncs.cs" />
+    <Compile Include="Funcalc\DependencyGraph.cs" />
+    <Compile Include="Funcalc\ExprToCGExpr.cs" />
+    <Compile Include="Funcalc\PathConditions.cs" />
+    <Compile Include="Funcalc\SdfTypes.cs" />
+    <Compile Include="Funcalc\CGExpr.cs" />
+    <Compile Include="Funcalc\SdfManager.cs" />
+    <Compile Include="Funcalc\CodeGenerate.cs" />
+    <Compile Include="Funcalc\ProgramLines.cs" />
+    <Compile Include="Funcalc\Variable.cs" />
+    <Compile Include="Types.cs" />
+    <Compile Include="Values.cs" />
+    <Compile Include="Workbook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Coco\Coco.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Coco\Parser.frame" />
+    <None Include="Coco\Scanner.frame" />
+    <None Include="Coco\Spreadsheet.ATG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUI.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SDF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Externals\Externals.csproj">
+      <Project>{3FD58148-0681-4784-AAE1-6DBC501425E4}</Project>
+      <Name>Externals</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

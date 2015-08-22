@@ -1,0 +1,2373 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Administrator</Author>
+  <LastAuthor>Peter Sestoft</LastAuthor>
+  <Created>2008-11-12T14:17:20Z</Created>
+  <LastSaved>2009-01-10T16:47:08Z</LastSaved>
+  <Version>11.5606</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8415</WindowHeight>
+  <WindowWidth>15480</WindowWidth>
+  <WindowTopX>315</WindowTopX>
+  <WindowTopY>-75</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21" ss:Name="Hyperlink">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#0000FF"
+    ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Alignment ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s25" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s26">
+   <Interior ss:Color="#666699" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s27">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#FF0000"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Interior ss:Color="#FFFF00" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Interior ss:Color="#FF0000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s30">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s31">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#FF0000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s32">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s33">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#FFFF00" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s34">
+   <Interior/>
+  </Style>
+  <Style ss:ID="s35">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#666699" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s36">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s37">
+   <Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s38">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior ss:Color="#FFFFCC" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s39">
+   <Interior ss:Color="#FFFFCC" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s40">
+   <Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s41">
+   <Interior ss:Color="#CCCCFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s42">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFF00" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s43">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Bold="1"/>
+   <Interior ss:Color="#FF0000" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Names>
+  <NamedRange ss:Name="DATE_INPUT" ss:RefersTo="='@Sheet1'!R91C2:R93C2"/>
+  <NamedRange ss:Name="DATE_OUTPUT" ss:RefersTo="='@Sheet1'!R94C2"/>
+  <NamedRange ss:Name="DATEISO_INPUT" ss:RefersTo="='@Sheet1'!R275C2:R277C2"/>
+  <NamedRange ss:Name="DATEISO_OUTPUT" ss:RefersTo="='@Sheet1'!R305C2"/>
+  <NamedRange ss:Name="DAY_INPUT" ss:RefersTo="='@Sheet1'!R105C2"/>
+  <NamedRange ss:Name="DAY_OUTPUT" ss:RefersTo="='@Sheet1'!R106C2"/>
+  <NamedRange ss:Name="DAYS_INPUT" ss:RefersTo="='@Sheet1'!R109C2:R110C2"/>
+  <NamedRange ss:Name="DAYS_OUTPUT" ss:RefersTo="='@Sheet1'!R117C2"/>
+  <NamedRange ss:Name="EFIXDATE_INPUT" ss:RefersTo="='@Sheet1'!R22C2"/>
+  <NamedRange ss:Name="EFIXDATE_OUTPUT" ss:RefersTo="='@Sheet1'!R28C2"/>
+  <NamedRange ss:Name="FIXDATE_INPUT" ss:RefersTo="='@Sheet1'!R13C2:R15C2"/>
+  <NamedRange ss:Name="FIXDATE_OUTPUT" ss:RefersTo="='@Sheet1'!R18C2"/>
+  <NamedRange ss:Name="FIXDATEISO_INPUT" ss:RefersTo="='@Sheet1'!R308C2:R310C2"/>
+  <NamedRange ss:Name="FIXDATEISO_OUTPUT" ss:RefersTo="='@Sheet1'!R322C2"/>
+  <NamedRange ss:Name="GDATE_INPUT" ss:RefersTo="='@Sheet1'!R73C2"/>
+  <NamedRange ss:Name="GDATE_OUTPUT" ss:RefersTo="='@Sheet1'!R88C2"/>
+  <NamedRange ss:Name="GDAY_INPUT" ss:RefersTo="='@Sheet1'!R55C2"/>
+  <NamedRange ss:Name="GDAY_OUTPUT" ss:RefersTo="='@Sheet1'!R69C2"/>
+  <NamedRange ss:Name="GMONTH_INPUT" ss:RefersTo="='@Sheet1'!R41C2"/>
+  <NamedRange ss:Name="GMONTH_OUTPUT" ss:RefersTo="='@Sheet1'!R51C2"/>
+  <NamedRange ss:Name="GYEAR_INPUT" ss:RefersTo="='@Sheet1'!R32C2"/>
+  <NamedRange ss:Name="GYEAR_OUTPUT" ss:RefersTo="='@Sheet1'!R37C2"/>
+  <NamedRange ss:Name="ISOWEEKNUM_INPUT" ss:RefersTo="='@Sheet1'!R325C2"/>
+  <NamedRange ss:Name="ISOWEEKNUM_OUTPUT" ss:RefersTo="='@Sheet1'!R342C2"/>
+  <NamedRange ss:Name="KDAYA_INPUT" ss:RefersTo="='@Sheet1'!R219C2:R220C2"/>
+  <NamedRange ss:Name="KDAYA_OUTPUT" ss:RefersTo="='@Sheet1'!R243C2"/>
+  <NamedRange ss:Name="KDAYB_INPUT" ss:RefersTo="='@Sheet1'!R165C2:R166C2"/>
+  <NamedRange ss:Name="KDAYB_OUTPUT" ss:RefersTo="='@Sheet1'!R189C2"/>
+  <NamedRange ss:Name="KDAYOA_INPUT" ss:RefersTo="='@Sheet1'!R192C2:R193C2"/>
+  <NamedRange ss:Name="KDAYOA_OUTPUT" ss:RefersTo="='@Sheet1'!R216C2"/>
+  <NamedRange ss:Name="KDAYOB_INPUT" ss:RefersTo="='@Sheet1'!R138C2:R139C2"/>
+  <NamedRange ss:Name="KDAYOB_OUTPUT" ss:RefersTo="='@Sheet1'!R162C2"/>
+  <NamedRange ss:Name="LEAPYEAR_INPUT" ss:RefersTo="='@Sheet1'!R6C2"/>
+  <NamedRange ss:Name="LEAPYEAR_OUTPUT" ss:RefersTo="='@Sheet1'!R9C2"/>
+  <NamedRange ss:Name="MONTH_INPUT" ss:RefersTo="='@Sheet1'!R101C2"/>
+  <NamedRange ss:Name="MONTH_OUTPUT" ss:RefersTo="='@Sheet1'!R102C2"/>
+  <NamedRange ss:Name="NTHKDAY_INPUT" ss:RefersTo="='@Sheet1'!R246C2:R248C2"/>
+  <NamedRange ss:Name="NTHKDAY_OUTPUT" ss:RefersTo="='@Sheet1'!R272C2"/>
+  <NamedRange ss:Name="WEEKDAY_INPUT" ss:RefersTo="='@Sheet1'!R120C2:R121C2"/>
+  <NamedRange ss:Name="WEEKDAY_OUTPUT" ss:RefersTo="='@Sheet1'!R135C2"/>
+  <NamedRange ss:Name="YEAR_INPUT" ss:RefersTo="='@Sheet1'!R97C2"/>
+  <NamedRange ss:Name="YEAR_OUTPUT" ss:RefersTo="='@Sheet1'!R98C2"/>
+  <NamedRange ss:Name="ZELLER_INPUT" ss:RefersTo="='@Sheet1'!R345C2:R347C2"/>
+  <NamedRange ss:Name="ZELLER_OUTPUT" ss:RefersTo="='@Sheet1'!R364C2"/>
+ </Names>
+ <Worksheet ss:Name="@Sheet1">
+  <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="364" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:AutoFitWidth="0" ss:Width="192"/>
+   <Column ss:AutoFitWidth="0" ss:Width="96"/>
+   <Column ss:AutoFitWidth="0" ss:Width="80.25"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Gregorian calendar: Date Library.</Data></Cell>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Based on &quot;Nachum Dershowitz, Edward M. Reingold&#45;&#45;- Calendarical Calculation. 3rd ed,Cambridge 2008&quot;. </Data></Cell>
+    <Cell ss:StyleID="s22"/>
+    <Cell ss:StyleID="s22"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="2" ss:StyleID="s25" ss:HRef="mailto:huixu@itu.dk,"><Data
+      ss:Type="String">huixu@itu.dk, mainul@itu.dk</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="34.5">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">LEAPYEAR Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">Gregorian-leap-year? (g-year) </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input year (yyyy)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2009</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell to check if it's leap year.</Font></ss:Data></Comment><NamedCell
+      ss:Name="LEAPYEAR_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">(g-year mod4) =0 ?</Data></Cell>
+    <Cell ss:Formula="=MOD(R[-1]C,4)"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-1]&lt;&gt;0,0,1)"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">(g-year mod 400)&lt;&gt;{100,200,300}</Data></Cell>
+    <Cell ss:Formula="=MOD(R[-2]C,400)"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-1]&lt;&gt;100,IF(RC[-1]&lt;&gt;200,IF(RC[-1]&lt;&gt;300,1,0),0),0)"><Data
+      ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Out Leaf year (true=1,false=0)=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=IF(RC[1]&lt;&gt;2,0,1)"><Data
+      ss:Type="Number">0</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Out put cell, leap year=1, otherwise=0.</Font></ss:Data></Comment><NamedCell
+      ss:Name="LEAPYEAR_OUTPUT"/></Cell>
+    <Cell ss:Formula="=R[-2]C+R[-1]C"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Formula="=define(&quot;leapyear&quot;,RC[-2],R[-3]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="32.25">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">FIXDATE Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">fixed-from-Gregorian (yyyy,mm,dd)   </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year (yyyy)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2100</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input Cells from Gregorian date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month (mm)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2</Data><NamedCell
+      ss:Name="FIXDATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Day (dd)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">28</Data><NamedCell
+      ss:Name="FIXDATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2100</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s31"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">766703</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to show the fixed date from origin </Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATE_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;fixdate&quot;,RC[-2],R[-5]C[-2],R[-4]C[-2],R[-3]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30.75">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">EFIXDATE Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">fixed-from-Gdate(int: yyyymmdd)</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="EFIXDATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s31"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to show the fixed date from origin </Font></ss:Data></Comment><NamedCell
+      ss:Name="EFIXDATE_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;efixdate&quot;,RC[-2],R[-6]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30.75">
+    <Cell ss:StyleID="s35"><Data ss:Type="String">GYEAR Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">gregorian-year-from-fixed (fixed date) </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input fixed date( int )=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">736785</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell from a G fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GYEAR_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">approx= floor ((400/146097)*(fixed date+1),1)=</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(R[-2]C+1)),1)"><Data ss:Type="Number">2017</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">start=1+365*approx+floor(approx/4,1)-floor(approx/100,1)+floor(approx/400,1)=</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-2]C+FLOOR(R[-2]C/4,1)-FLOOR(R[-2]C/100,1)+FLOOR(R[-2]C/400,1)"><Data
+      ss:Type="Number">736695</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Gregorian Year=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=IF(R[-5]C&lt;R[-1]C,R[-3]C,R[-3]C+1)"><Data
+      ss:Type="Number">2018</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to get Gregorian Year from fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GYEAR_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;gyear&quot;,RC[-2],R[-5]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="29.25">
+    <Cell ss:StyleID="s35"><Data ss:Type="String">GMONTH Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">gregorian-month-from-fixed (fixed date) </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input fixed date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">736785</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell from a G-fixed Date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GMONTH_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">737091</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2018</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">737060</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-3]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2018</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2017</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2018</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">736389</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">396</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">15</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">3</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to get month number from a G-fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GMONTH_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;gmonth&quot;,RC[-2],R[-10]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="29.25">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">GDAY Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">gregorian-day-from-fixed (fixed date) </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input fixed date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">736785</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell of a G-fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">737091</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2018</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">737060</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2019</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2018</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2019</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">736754</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">31</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2019</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2018</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">736785</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to get the day of one G-fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GDAY_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;gday&quot;,RC[-2],R[-14]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s35"><Data ss:Type="String">GDATE Functioin</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s27"><Data ss:Type="String">gregorian-date-from-fixed (fixed date) </Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input fixed date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">733358</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell from a G-fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GDATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733664</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">256</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081112</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell to get a Gregorian date from a G-fixed date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="GDATE_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;gdate&quot;,RC[-2],R[-15]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="29.25">
+    <Cell ss:StyleID="s35"><Data ss:Type="String">DATE Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input year=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2008</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cells: int year, int month, int day.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input month=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">11</Data><NamedCell
+      ss:Name="DATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input day=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">12</Data><NamedCell
+      ss:Name="DATE_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">output date=y*10000+m*100+d=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-3]C*10000+R[-2]C*100+R[-1]C"><Data
+      ss:Type="Number">20081112</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATE_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;date&quot;,RC[-2],R[-3]C[-2],R[-2]C[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">YEAR Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell: int date.&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="YEAR_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">ouput year=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell: int year.</Font></ss:Data></Comment><NamedCell
+      ss:Name="YEAR_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;year&quot;, RC[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30.75">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">MONTH Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="MONTH_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">output month=</Data></Cell>
+    <Cell ss:StyleID="s29"
+     ss:Formula="=FLOOR((R[-1]C-FLOOR(R[-1]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell: int month.&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="MONTH_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;month&quot;, RC[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">DAY Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input date (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="DAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">output day=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-1]C-FLOOR(R[-1]C/100,1)*100"><Data
+      ss:Type="Number">12</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell: int day&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="DAY_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;day&quot;, RC[-2],R[-1]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">DAYS Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input date1 (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date1.&#10;&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="DAYS_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input date2 (int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20090101</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date2&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="DAYS_INPUT"/></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-2]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C[-2]/10000,1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-3]C-FLOOR(R[-3]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+    <Cell ss:Index="4" ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C[-2]-FLOOR(R[-2]C[-2]/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">day=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-4]C-FLOOR(R[-4]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-3]C[-2]-FLOOR(R[-3]C[-2]/100,1)*100"><Data
+      ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">y1=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+    <Cell ss:StyleID="s37"><Data ss:Type="String">y2=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">m1=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data
+      ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s37"><Data ss:Type="String">m2=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">fixed date1=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data></Cell>
+    <Cell><Data ss:Type="String">fixed date2=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">days= fixed date1-fixed date2 =</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-1]C[2]-R[-1]C"><Data ss:Type="Number">50</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell: int days.&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="DAYS_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;days&quot;,RC[-2],R[-8]C[-2],R[-7]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">WEEKDAY Function:</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20.25">
+    <Cell ss:StyleID="s34"><Data ss:Type="String">input date(int)=</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="WEEKDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20.25">
+    <Cell><Data ss:Type="String">Return type(1-S,2-M)=</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">2</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: 1=week starts from Sunday, 2=week starts from Monday.</Font></ss:Data></Comment><NamedCell
+      ss:Name="WEEKDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-2]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+    <Cell><Data ss:Type="String">CKyear=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-2]&gt;=1582,RC[-2],0)"><Data ss:Type="Number">2008</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Check Year</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell><Data ss:Type="String">Nyear=</Data></Cell>
+    <Cell ss:Formula="=IF(R[1]C[-2]&lt;3,RC[-2]-1,RC[-2])"><Data ss:Type="Number">2008</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">since Janurary and February are treated as month 13 and 14, then year=year-1</Font></B></ss:Data></Comment></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-3]C-FLOOR(R[-3]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+    <Cell><Data ss:Type="String">CKmonth=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-2]&lt;=12,IF(RC[-2]&gt;=1,RC[-2],0),0)"><Data
+      ss:Type="Number">11</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Check month</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell><Data ss:Type="String">Nmonth=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-2]&lt;3,RC[-2]+12,RC[-2])"><Data ss:Type="Number">11</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">According to Zeller's congruence, month from 3-14, Janurary=13, February=14</Font></ss:Data></Comment></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-4]C-FLOOR(R[-4]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+    <Cell><Data ss:Type="String">CKday=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-2]&gt;=1,IF(RC[-2]&lt;=31,RC[-2],0),0)"><Data
+      ss:Type="Number">12</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Check day</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell><Data ss:Type="String">Nday=</Data></Cell>
+    <Cell ss:Formula="=RC[-2]"><Data ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">A=(Nday)=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[4]"><Data ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">B=trunc((Nmonth+1)*26/10)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((R[-3]C[4]+1)*26/10,1)"><Data ss:Type="Number">31</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">C=Nyear mod 100=</Data></Cell>
+    <Cell ss:Formula="=MOD(R[-5]C[4],100)"><Data ss:Type="Number">8</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">D=trunc(C/4)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR(R[-1]C/4,1)"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">E=trunc(trunc(Nyear/100)/4)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR(R[-7]C[4]/400,1)"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">F=5*trunc(Nyear/100)=</Data></Cell>
+    <Cell ss:Formula="=5*FLOOR(R[-8]C[4]/100,1)"><Data ss:Type="Number">100</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">W=(A+B+C+D+E+F) mod 7=</Data></Cell>
+    <Cell ss:StyleID="s37"
+     ss:Formula="=MOD((R[-6]C+R[-5]C+R[-4]C+R[-3]C+R[-2]C+R[-1]C),7)"><Data
+      ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">(0=Saturday, 1=Sunday???)</Data></Cell>
+    <Cell ss:StyleID="s37"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">DAY-OF-WEEK (ISO)=</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=MOD((R[-2]C+5),7)+1"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s37"><Data ss:Type="String">(Monday=1, Sunday=7)</Data></Cell>
+    <Cell ss:StyleID="s37"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">WEEKDAY=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=IF(R[-14]C&lt;&gt;2,R[-4]C,R[-2]C)"><Data
+      ss:Type="Number">3</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell to get the weekday of a int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="WEEKDAY_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;weekday&quot;,RC[-2],R[-15]C[-2],R[-14]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">KDAYOB Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input K day: (0=Sunday, 1=M???6=Sat):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">4</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int day (0=Sun, 1=Mo, 2=Tu, 3=We, 4=Th, 5=Fr, 6=Sa.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOB_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOB_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C-R[-8]C),7)"><Data ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=R[-2]C-R[-1]C"><Data ss:Type="Number">733352</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733658</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">250</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081106</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell get a int Gdate on or before K days.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOB_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;kdayob&quot;,RC[-2],R[-24]C[-2],R[-23]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30.75">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">KDAYB Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input K day: (0=Sunday, 1=M???6=Sat):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">3</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int day (0=Sun, 1=Mo, 2=Tu, 3=We, 4=Th, 5=Fr, 6=Sa.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYB_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYB_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C-1-R[-8]C),7)"><Data ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=R[-2]C-1-R[-1]C"><Data ss:Type="Number">733351</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733657</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">249</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081105</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell get a int Gdate before K days.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYB_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;kdayb&quot;,RC[-2],R[-24]C[-2],R[-23]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"/>
+    <Cell ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">KDAYOA Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input K day: (0=Sunday, 1=M???6=Sat):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">4</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int K day (0=Sun, 1=Mo, 2=Tu, 3=We, 4=Th, 5=Fr, 6=Sa.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOA_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOA_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C+6-R[-8]C),7)"><Data ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=R[-2]C+6-R[-1]C"><Data ss:Type="Number">733359</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733665</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">257</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">13</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081113</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell get a int Gdate on or after K days.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYOA_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;kdayoa&quot;,RC[-2],R[-24]C[-2],R[-23]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">KDAYA Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input K day: (0=Sunday, 1=M???6=Sat):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">3</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int K day (0=Sun, 1=Mo, 2=Tu, 3=We, 4=Th, 5=Fr, 6=Sa.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYA_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20081112</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYA_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733358</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C+7-R[-8]C),7)"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=R[-2]C+7-R[-1]C"><Data ss:Type="Number">733365</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733671</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">263</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">19</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081119</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;Output cell get a int Gdate after K days.</Font></ss:Data></Comment><NamedCell
+      ss:Name="KDAYA_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;kdaya&quot;,RC[-2],R[-24]C[-2],R[-23]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">NTHKDAY Function</Data></Cell>
+    <Cell ss:StyleID="s32"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.5">
+    <Cell ss:StyleID="s34"><Data ss:Type="String">input N weeks:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">-10</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int n weeks.</Font></ss:Data></Comment><NamedCell
+      ss:Name="NTHKDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input K day : (0=Sunday, 1=M???6=Sat):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int K day (0=Sun, 1=Mo, 2=Tu, 3=We, 4=Th, 5=Fr, 6=Sa.</Font></ss:Data></Comment><NamedCell
+      ss:Name="NTHKDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int date:</Data></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="Number">20080229</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="NTHKDAY_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">29</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-3]C[-5]+FLOOR((R[-2]C[-5]+9)/12,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=12+MOD((R[-3]C[-5]-2),-12)"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733101</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C[-5]"><Data
+      ss:Type="Number">733101</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C-1-R[-8]C),7)"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=MOD((R[-1]C+7-R[-8]C[-5]),7)"><Data
+      ss:Type="Number">4</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=(R[-2]C-1-R[-1]C)+7*R[-10]C"><Data
+      ss:Type="Number">733027</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s39"
+     ss:Formula="=(R[-2]C+7-R[-1]C)+7*R[-10]C[-5]"><Data ss:Type="Number">733034</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733333</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2007</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733340</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2007</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733042</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733042</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s34"
+     ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2007</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2007</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">732736</Data></Cell>
+    <Cell ss:Index="7"
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">732736</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">291</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">298</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2007</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data
+      ss:Type="Number">2007</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733011</Data></Cell>
+    <Cell ss:Index="7"
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733011</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">24</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20071217</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s37"
+     ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data ss:Type="Number">20071224</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">nth-kday output: int date=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=IF(R[-26]C&gt;0,R[-1]C,R[-1]C[5])"><Data
+      ss:Type="Number">20071224</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell to get int date for nth of kday of a input date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="NTHKDAY_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;nthkday&quot;,RC[-2],R[-26]C[-2],R[-25]C[-2],R[-24]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">DATEISO Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int YEAR (yyyy):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2008</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int year.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input int WEEKNUM(1-52,53):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">46</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int week number.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input int WEEKDAY(0=Sun, 1=Mon???):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">4</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: weekday (0=Sunday, 1=Monday???6=Saturday.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">nth=week</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=R[-2]C"><Data ss:Type="Number">46</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Sunday=0</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">year-1,12,28=</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=(R[-5]C-1)*10000+12*100+28"><Data
+      ss:Type="Number">20071228</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2007</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">28</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-3]C[-5]+FLOOR((R[-2]C[-5]+9)/12,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=12+MOD((R[-3]C[-5]-2),-12)"><Data
+      ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733038</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C[-5]"><Data
+      ss:Type="Number">733038</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C-1-R[-8]C),7)"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=MOD((R[-1]C+7-R[-8]C[-5]),7)"><Data
+      ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=(R[-2]C-1-R[-1]C)+7*R[-10]C"><Data
+      ss:Type="Number">733355</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s39"
+     ss:Formula="=(R[-2]C+7-R[-1]C)+7*R[-10]C[-5]"><Data ss:Type="Number">733362</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=fixed date+306=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733661</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-1]C+306"><Data ss:Type="Number">733668</Data></Cell>
+    <Cell><Data ss:Type="String">approx=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((400/146097*(RC[-2]+1)),1)"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+    <Cell ss:Index="8"><Data ss:Type="String">start=</Data></Cell>
+    <Cell
+     ss:Formula="=1+365*R[-1]C+FLOOR(R[-1]C/4,1)-FLOOR(R[-1]C/100,1)+FLOOR(R[-1]C/400,1)"><Data
+      ss:Type="Number">733408</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">y=Gregorian-year-from-fixed(x)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s34"
+     ss:Formula="=IF(R[-2]C&lt;R[-1]C[2],R[-2]C[2],R[-2]C[2]+1)"><Data
+      ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=fixed-from-gregorian(y-1,march,1)=</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+    <Cell><Data ss:Type="String">y-1=</Data></Cell>
+    <Cell ss:Formula="=R[-1]C[-1]-1"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="String">y=</Data></Cell>
+    <Cell ss:Formula="=RC[-3]+FLOOR((R[1]C[-3]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="5"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">march=</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:Index="10"><Data ss:Type="String">m=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((RC[-3]-2),-12)"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="String">1=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">z=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+    <Cell ss:Index="7"
+     ss:Formula="=-306+365*(R[-3]C[4]-1) +FLOOR((R[-3]C[4]-1)/4,1)-FLOOR((R[-3]C[4]-1)/100,1)+FLOOR((R[-3]C[4]-1)/400,1)+FLOOR((3*R[-2]C[4]-1)/5,1)+30*(R[-2]C[4]-1)+R[-1]C[1]"><Data
+      ss:Type="Number">733102</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">prior-days = fixed date- z=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">253</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-8]C-R[-1]C"><Data ss:Type="Number">260</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">w=(floor(1/153*(5*prior-days+2),1)+3)=</Data></Cell>
+    <Cell ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=(FLOOR(1/153*(5*R[-1]C+2),1)+3)"><Data
+      ss:Type="Number">11</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">month=w amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=12+MOD(R[-1]C,-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y =</Data></Cell>
+    <Cell ss:Formula="= R[1]C[-2] + FLOOR((RC[-2]+9)/12,1)"><Data ss:Type="Number">2009</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Year= y- floor((month+9)/12,1)=</Data></Cell>
+    <Cell ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-8]C-FLOOR(((R[-1]C+9)/12),1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m =</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-1]C[-2]-2),-12)"><Data ss:Type="Number">9</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">day=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">t=fixed-from-gregorian( year, month,1)=</Data></Cell>
+    <Cell
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+    <Cell ss:Index="7"
+     ss:Formula="=-306+365*(R[-3]C[2]-1) +FLOOR((R[-3]C[2]-1)/4,1)-FLOOR((R[-3]C[2]-1)/100,1)+FLOOR((R[-3]C[2]-1)/400,1)+FLOOR((3*R[-2]C[2]-1)/5,1)+30*(R[-2]C[2]-1)+R[-1]C"><Data
+      ss:Type="Number">733347</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s36"><Data ss:Type="String">Day= fixed date- t+1=</Data></Cell>
+    <Cell ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-14]C-R[-1]C+1"><Data ss:Type="Number">16</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">gregorian-date=y*10000+m*100+d</Data></Cell>
+    <Cell ss:StyleID="s37" ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data
+      ss:Type="Number">20081109</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s37"
+     ss:Formula="=R[-4]C*10000+R[-5]C*100+R[-1]C"><Data ss:Type="Number">20081116</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">nth-kday output: int date=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=IF(R[-26]C&gt;0,R[-1]C,R[-1]C[5])"><Data
+      ss:Type="Number">20081109</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">int date from ISO date:</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=R[-1]C+R[-28]C"><Data ss:Type="Number">20081113</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell: int date from ISO date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="DATEISO_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;dateiso&quot;,RC[-2],R[-30]C[-2],R[-29]C[-2],R[-28]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">FIXDATEISO Function</Data></Cell>
+    <Cell ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Input int YEAR (yyyy):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">2008</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int year.</Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input int WEEKNUM(1-52,53):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int week number.</Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input int WEEKDAY(0=Sun, 1=Mon???):</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: weekday (0=Sunday, 1=Monday???6=Saturday.</Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATEISO_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">nth=week</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=R[-2]C"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Sunday=0</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">year-1,12,28=</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=(R[-5]C-1)*10000+12*100+28"><Data
+      ss:Type="Number">20071228</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2007</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">28</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=R[-3]C[-5]+FLOOR((R[-2]C[-5]+9)/12,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=12+MOD((R[-3]C[-5]-2),-12)"><Data
+      ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733038</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C[-5]"><Data
+      ss:Type="Number">733038</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-1]C-1-R[-8]C),7)"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:Index="7" ss:Formula="=MOD((R[-1]C+7-R[-8]C[-5]),7)"><Data
+      ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=(R[-2]C-1-R[-1]C)+7*R[-10]C"><Data
+      ss:Type="Number">733040</Data></Cell>
+    <Cell ss:Index="7" ss:StyleID="s39"
+     ss:Formula="=(R[-2]C+7-R[-1]C)+7*R[-10]C[-5]"><Data ss:Type="Number">733047</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">fixed-date from ISO date:</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=IF(R[-11]C&gt;0,R[-1]C,R[-1]C[5])+R[-12]C"><Data
+      ss:Type="Number">733041</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell to get fixed date from ISO date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="FIXDATEISO_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;fixdateiso&quot;,RC[-2],R[-14]C[-2],R[-13]C[-2],R[-12]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">ISOWEEKNUM Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">input int date: </Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="Number">20080101</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;input cell: int date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="ISOWEEKNUM_INPUT"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+    <Cell><Data ss:Type="String">year=</Data></Cell>
+    <Cell ss:Formula="=RC[-2]"><Data ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR((R[-2]C-R[-1]C*10000)/100,1)"><Data
+      ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">weeknum=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">weekday=1</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell><Data ss:Type="String">nth=week</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=R[-2]C"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">11</Data></Cell>
+    <Cell><Data ss:Type="String">Sunday=0</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733042</Data></Cell>
+    <Cell><Data ss:Type="String">year-1,12,28=</Data></Cell>
+    <Cell ss:StyleID="s40" ss:Formula="=(R[-5]C-1)*10000+12*100+28"><Data
+      ss:Type="Number">20071228</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell><Data ss:Type="String">Year=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=FLOOR(R[-1]C/10000,1)"><Data
+      ss:Type="Number">2007</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell><Data ss:Type="String">Month=</Data></Cell>
+    <Cell ss:StyleID="s34"
+     ss:Formula="=FLOOR((R[-2]C-FLOOR(R[-2]C/10000,1)*10000)/100,1)"><Data
+      ss:Type="Number">12</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell><Data ss:Type="String">Day=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=R[-3]C-FLOOR(R[-3]C/100,1)*100"><Data
+      ss:Type="Number">28</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3" ss:StyleID="s30"><Data ss:Type="String">y = year + floor((month+9)/12)=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C+FLOOR((R[-2]C+9)/12,1)"><Data ss:Type="Number">2008</Data></Cell>
+    <Cell ss:Index="9" ss:Formula="=R[-3]C[-5]+FLOOR((R[-2]C[-5]+9)/12,1)"><Data
+      ss:Type="Number">2008</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3" ss:StyleID="s30"><Data ss:Type="String">m = (month-2) amod 12=</Data></Cell>
+    <Cell ss:Formula="=12+MOD((R[-3]C-2),-12)"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:Index="9" ss:Formula="=12+MOD((R[-3]C[-5]-2),-12)"><Data
+      ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">a1=Fixed date from Gregorian=</Data></Cell>
+    <Cell ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C"><Data
+      ss:Type="Number">733038</Data></Cell>
+    <Cell ss:Index="9" ss:StyleID="s38"
+     ss:Formula="=-306+365*(R[-2]C-1) +FLOOR((R[-2]C-1)/4,1)-FLOOR((R[-2]C-1)/100,1)+FLOOR((R[-2]C-1)/400,1)+FLOOR((3*R[-1]C-1)/5,1)+30*(R[-1]C-1)+R[-3]C[-5]"><Data
+      ss:Type="Number">733038</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">a2=(Gdayofweek-K)=</Data></Cell>
+    <Cell ss:Formula="=MOD(R[-1]C-1,7)"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:Index="9" ss:Formula="=MOD((R[-1]C+7-R[-8]C[-5]),7)"><Data
+      ss:Type="Number">5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">a1-a2=</Data></Cell>
+    <Cell ss:StyleID="s39" ss:Formula="=(R[-2]C-1-R[-1]C)+7*R[-10]C"><Data
+      ss:Type="Number">733040</Data></Cell>
+    <Cell ss:Index="9" ss:StyleID="s39"
+     ss:Formula="=(R[-2]C+7-R[-1]C)+7*R[-10]C[-5]"><Data ss:Type="Number">733047</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3"><Data ss:Type="String">fixed-date from ISO date:</Data></Cell>
+    <Cell ss:StyleID="s41" ss:Formula="=R[-1]C+R[-12]C"><Data ss:Type="Number">733041</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">x=a1-fixed-date from ISO=</Data></Cell>
+    <Cell ss:Formula="=R[-10]C-R[-1]C[2]"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">week number=</Data></Cell>
+    <Cell ss:StyleID="s29" ss:Formula="=1+FLOOR(R[-1]C/7,1)"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Administrator:</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;output cell: get week number of a int g-date.</Font></ss:Data></Comment><NamedCell
+      ss:Name="ISOWEEKNUM_OUTPUT"/></Cell>
+    <Cell ss:Index="4" ss:Formula="=define(&quot;isoweeknum&quot;,RC[-2],R[-17]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="30.75">
+    <Cell ss:StyleID="s26"><Data ss:Type="String">ZELLER Function</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">year=</Data></Cell>
+    <Cell ss:StyleID="s42"><Data ss:Type="Number">1975</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Input cell Year.</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="ZELLER_INPUT"/></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">CKyear=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-3]&gt;=1582,RC[-3],0)"><Data ss:Type="Number">1975</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Check Year</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Nyear=</Data></Cell>
+    <Cell ss:Formula="=IF(R[1]C[-5]&lt;3,RC[-5]-1,RC[-5])"><Data ss:Type="Number">1975</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">since Janurary and February are treated as month 13 and 14, then year=year-1</Font></B></ss:Data></Comment></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">month=</Data></Cell>
+    <Cell ss:StyleID="s42"><Data ss:Type="Number">8</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Input cell: Month</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="ZELLER_INPUT"/></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">CKmonth=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-3]&lt;=12,IF(RC[-3]&gt;=1,RC[-3],0),0)"><Data
+      ss:Type="Number">8</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Check month</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Nmonth=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-5]&lt;3,RC[-5]+12,RC[-5])"><Data ss:Type="Number">8</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">According to Zeller's congruence, month from 3-14, Janurary=13, February=14</Font></ss:Data></Comment></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">day=</Data></Cell>
+    <Cell ss:StyleID="s42"><Data ss:Type="Number">1</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+         html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Input cell: day&#10;</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="ZELLER_INPUT"/></Cell>
+    <Cell ss:Index="4"><Data ss:Type="String">CKday=</Data></Cell>
+    <Cell ss:Formula="=IF(RC[-3]&gt;=1,IF(RC[-3]&lt;=31,RC[-3],0),0)"><Data
+      ss:Type="Number">1</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">Check day</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment></Cell>
+    <Cell ss:Index="9"><Data ss:Type="String">Nday=</Data></Cell>
+    <Cell ss:Formula="=RC[-5]"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="4"><Data ss:Type="String">CHECK=</Data></Cell>
+    <Cell ss:Formula="=R[-3]C*R[-2]C*R[-1]C"><Data ss:Type="Number">15800</Data></Cell>
+    <Cell><Data ss:Type="String">(0 means input invaild)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Span="3"/>
+   <Row ss:Index="353" ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">A=(Nday)=</Data></Cell>
+    <Cell ss:Formula="=R[-6]C[8]"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">Monday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">B=trunc((Nmonth+1)*26/10)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR((R[-8]C[8]+1)*26/10,1)"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">Tuesday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">C=Nyear mod 100=</Data></Cell>
+    <Cell ss:Formula="=MOD(R[-10]C[8],100)"><Data ss:Type="Number">75</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">3</Data></Cell>
+    <Cell><Data ss:Type="String">Wednesday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">D=trunc(C/4)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR(R[-1]C/4,1)"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">4</Data></Cell>
+    <Cell><Data ss:Type="String">Thursday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">E=trunc(trunc(Nyear/100)/4)=</Data></Cell>
+    <Cell ss:Formula="=FLOOR(R[-12]C[8]/400,1)"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">5</Data></Cell>
+    <Cell><Data ss:Type="String">Friday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">F=5*trunc(Nyear/100)=</Data></Cell>
+    <Cell ss:Formula="=5*FLOOR(R[-13]C[8]/100,1)"><Data ss:Type="Number">95</Data></Cell>
+    <Cell ss:Index="7"><Data ss:Type="Number">6</Data></Cell>
+    <Cell><Data ss:Type="String">Saturday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="7"><Data ss:Type="Number">7</Data></Cell>
+    <Cell><Data ss:Type="String">Sunday</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">W=(A+B+C+D+E+F) mod 7=</Data></Cell>
+    <Cell ss:Formula="=MOD((R[-7]C+R[-6]C+R[-5]C+R[-4]C+R[-3]C+R[-2]C),7)"><Data
+      ss:Type="Number">6</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">(0=Saturday, 1=Sunday???</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">DAY-OF-WEEK (ISO)=</Data></Cell>
+    <Cell ss:StyleID="s34" ss:Formula="=MOD((R[-3]C+5),7)+1"><Data ss:Type="Number">5</Data><Comment
+      ss:Author="Administrator"><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">Monday=1... Sunday=7</Font></ss:Data></Comment></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">(Monday=1, Sunday=7)</Data></Cell>
+    <Cell ss:StyleID="s43"
+     ss:Formula="=IF(R[-1]C=R[-11]C[5],R[-11]C[6],(IF(R[-1]C=R[-10]C[5],R[-10]C[6],IF(R[-1]C=R[-9]C[5],R[-9]C[6],IF(R[-1]C=R[-8]C[5],R[-8]C[6],IF(R[-1]C=R[-7]C[5],R[-7]C[6],IF(R[-1]C=R[-6]C[5],R[-6]C[6],R[-5]C[6])))))))"><Data
+      ss:Type="String">Friday</Data><Comment ss:Author="Administrator"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Face="Tahoma"
+         x:Family="Swiss" html:Size="9" html:Color="#000000">OUTPUT CELL!</Font></B><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="9" html:Color="#000000">&#10;</Font></ss:Data></Comment><NamedCell
+      ss:Name="ZELLER_OUTPUT"/></Cell>
+    <Cell ss:Index="4"
+     ss:Formula="=define(&quot;zeller&quot;,RC[-2],R[-19]C[-2],R[-18]C[-2],R[-17]C[-2])"><Data
+      ss:Type="Error">#NAME?</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <TopRowVisible>26</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>49</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Date cal</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>2</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="0" ss:ExpandedRowCount="0" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15"/>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
