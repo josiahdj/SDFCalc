@@ -19,6 +19,21 @@
     </UpgradeBackupLocation>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,13 +74,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applier.cs" />
+    <Compile Include="ArrayDouble.cs" />
+    <Compile Include="ArrayExplicit.cs" />
+    <Compile Include="ArrayValue.cs" />
+    <Compile Include="ArrayView.cs" />
     <Compile Include="Benchmarks\Benchmarks.cs" />
+    <Compile Include="CellArea.cs" />
+    <Compile Include="CellRef.cs" />
     <Compile Include="Cells.cs" />
     <Compile Include="CellAddressing.cs" />
-    <Compile Include="Expressions.cs" />
+    <Compile Include="Const.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorValue.cs" />
+    <Compile Include="Expr.cs" />
     <Compile Include="Coco\Parser.cs" />
     <Compile Include="Coco\Scanner.cs" />
+    <Compile Include="Formats.cs" />
+    <Compile Include="FunCall.cs" />
     <Compile Include="Functions.cs" />
+    <Compile Include="FunctionValue.cs" />
     <Compile Include="GUI\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +112,18 @@
     <Compile Include="GUI\SDF.Designer.cs">
       <DependentUpon>SDF.cs</DependentUpon>
     </Compile>
+    <Compile Include="HashBag.cs" />
+    <Compile Include="HashList.cs" />
+    <Compile Include="IDepend.cs" />
+    <Compile Include="IExpressionVisitor.cs" />
+    <Compile Include="ImpossibleException.cs" />
     <Compile Include="IO\WorkbookIO.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NotImplementedException.cs" />
+    <Compile Include="NumberConst.cs" />
+    <Compile Include="NumberValue.cs" />
+    <Compile Include="ObjectValue.cs" />
     <Compile Include="Program.cs">
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RefSet.cs" />
     <Compile Include="Sheet.cs" />
     <Compile Include="Funcalc\CellsInFuncs.cs" />
     <Compile Include="Funcalc\DependencyGraph.cs" />
@@ -106,8 +144,13 @@
     <Compile Include="Funcalc\CodeGenerate.cs" />
     <Compile Include="Funcalc\ProgramLines.cs" />
     <Compile Include="Funcalc\Variable.cs" />
-    <Compile Include="Types.cs" />
-    <Compile Include="Values.cs" />
+    <Compile Include="TextConst.cs" />
+    <Compile Include="TextValue.cs" />
+    <Compile Include="CyclicException.cs" />
+    <Compile Include="Value.cs" />
+    <Compile Include="ValueCache.cs" />
+    <Compile Include="ValueConst.cs" />
+    <Compile Include="ValueTable.cs" />
     <Compile Include="Workbook.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +189,18 @@
       <Project>{3FD58148-0681-4784-AAE1-6DBC501425E4}</Project>
       <Name>Externals</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
