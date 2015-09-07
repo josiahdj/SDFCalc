@@ -27,7 +27,7 @@ using System;
 using System.Diagnostics;
 using SC = System.Collections;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace Corecalc {
   /// <summary>
@@ -36,26 +36,24 @@ namespace Corecalc {
   /// A Sheet belongs to a single Workbook, and only once.
   /// </summary>
   public sealed class Sheet : IEnumerable<Cell> {
-    public const int cols = 20, rows = 1000;   // Default sheet size
-    private String name;
+	private const int cols = 20;   // Default sheet size
+	private const int rows = 1000;   // Default sheet size
+	private String name;
     public readonly Workbook workbook;         // Non-null
     private readonly SheetRep cells;
     public int Cols { get; private set; }
     public int Rows { get; private set; }
 
-    private bool isFunctionSheet;
-
-    public Sheet(Workbook workbook, String name, bool functionSheet)
-      : this(workbook, name, cols, rows, functionSheet) {
-    }
+	public Sheet(Workbook workbook, String name, bool functionSheet)
+		: this(workbook, name, cols, rows, functionSheet) {}
 
     public Sheet(Workbook workbook, String name, int cols, int rows, bool functionSheet) {
       this.workbook = workbook;
       this.name = name;
-      this.cells = new SheetRep();
+      cells = new SheetRep();
       Cols = cols;
       Rows = rows;
-      this.isFunctionSheet = functionSheet;
+      IsFunctionSheet = functionSheet;
       workbook.AddSheet(this);
     }
 
@@ -76,17 +74,16 @@ namespace Corecalc {
 
     // Reset recomputation flags after a circularity has been found
     public void ResetCellState() {
-      foreach (Cell cell in cells)
-        if (cell != null)
-          cell.ResetCellState();
+      foreach (Cell cell in cells) {
+	      cell?.ResetCellState();
+      }
     }
 
     // From parsed constant or formula or null but not array formula, at sheet[col, row]
     public void SetCell(Cell cell, int col, int row) {
       Debug.Assert(!(cell is ArrayFormula));
       this[col, row] = cell;
-      if (cell != null)
-        cell.AddToSupportSets(this, col, row, 1, 1);
+	    cell?.AddToSupportSets(this, col, row, 1, 1);
     }
 
     // Insert cell, which must be Formula, as array formula 
@@ -159,9 +156,8 @@ namespace Corecalc {
         for (int r = 0; r < sheet.Rows; r++)
           for (int c = 0; c < sheet.Cols; c++) {
             Cell cell = sheet.cells[c, r];
-            if (cell != null)
-              cell.InsertRowCols(adjusted, this, sheet == this, R, N,
-               doRows ? r : c, doRows);
+	          cell?.InsertRowCols(adjusted, this, sheet == this, R, N,
+								  doRows ? r : c, doRows);
           }
       }
       if (doRows) {
@@ -190,8 +186,7 @@ namespace Corecalc {
     public String Show(int col, int row) {
       if (0 <= col && col < Cols && 0 <= row && row < Rows) {
         Cell cell = cells[col, row];
-        if (cell != null)
-          return cell.Show(col, row, workbook.format);
+	      return cell?.Show(col, row, workbook.format);
       }
       return null;
     }
@@ -246,12 +241,9 @@ namespace Corecalc {
       set { name = value; }
     }
 
-    public bool IsFunctionSheet {
-      get { return isFunctionSheet; }
-      set { isFunctionSheet = value; }
-    }
+    public bool IsFunctionSheet { get; set; }
 
-    public IEnumerator<Cell> GetEnumerator() {
+	public IEnumerator<Cell> GetEnumerator() {
       return cells.GetEnumerator();
     }
 
@@ -284,26 +276,26 @@ namespace Corecalc {
               }
               // All cells in sheet[col..col+size-1, row..row+size-1] contain expression expr
               // (1b) Try extending square with more rows below
-              int rows = size;
-              while (row + rows < sheetRows && CheckRow(col, row + rows, expr, size - 1))
-                rows++;
+              int rowSize = size;
+              while (row + rowSize < sheetRows && CheckRow(col, row + rowSize, expr, size - 1))
+                rowSize++;
               // sheet[col..col+size-1, row..row+rows-1] contains expr
               // (1c) Try extending square with more columns to the right
               int cols = size;
               while (col + cols < sheetCols && CheckCol(col + cols, row, expr, size - 1))
                 cols++;
               // sheet[col..col+cols-1, row..row+size-1] contains expr
-              if (rows > cols)
+              if (rowSize > cols)
                 cols = size;
               else
-                rows = size;
+                rowSize = size;
               // All cells in sheet[col..col+cols-1, row..row+rows-1] contain expression expr
               // (2) Mark all cells in the rectangle visited
               for (int deltaCol = 0; deltaCol < cols; deltaCol++)
-                for (int deltaRow = 0; deltaRow < rows; deltaRow++)
+                for (int deltaRow = 0; deltaRow < rowSize; deltaRow++)
                   (this[col + deltaCol, row + deltaRow] as Formula).Visited = true;
               // (3) Update the support sets of cells referred to from expr
-              expr.AddToSupportSets(this, col, row, cols, rows);
+              expr.AddToSupportSets(this, col, row, cols, rowSize);
             }
           }
         });
@@ -370,15 +362,9 @@ namespace Corecalc {
         if (c < 0 || SIZEW <= c || r < 0 || SIZEH <= r) 
           return null;
         Cell[][][] tile1 = tile0[(((c >> (3 * LOGW)) & MW) << LOGH) | ((r >> (3 * LOGH)) & MH)];
-        if (tile1 == null)
-          return null;
-        Cell[][] tile2 = tile1[(((c >> (2 * LOGW)) & MW) << LOGH) | ((r >> (2 * LOGH)) & MH)];
-        if (tile2 == null)
-          return null;
-        Cell[] tile3 = tile2[(((c >> (1 * LOGW)) & MW) << LOGH) | ((r >> (1 * LOGH)) & MH)];
-        if (tile3 == null)
-          return null;
-        return tile3[((c & MW) << LOGH) | (r & MH)];
+	    Cell[][] tile2 = tile1?[(((c >> (2 * LOGW)) & MW) << LOGH) | ((r >> (2 * LOGH)) & MH)];
+	    Cell[] tile3 = tile2?[(((c >> (1 * LOGW)) & MW) << LOGH) | ((r >> (1 * LOGH)) & MH)];
+	    return tile3?[((c & MW) << LOGH) | (r & MH)];
       }
       set {
         if (c < 0 || SIZEW <= c || r < 0 || SIZEH <= r)
@@ -411,18 +397,14 @@ namespace Corecalc {
 
     // Yield all the sheet's non-null cells
     public IEnumerator<Cell> GetEnumerator() {
-      foreach (Cell[][][] tile1 in tile0)
-        if (tile1 != null)
-          foreach (Cell[][] tile2 in tile1)
-            if (tile2 != null)
-              foreach (Cell[] tile3 in tile2)
-                if (tile3 != null)
-                  foreach (Cell cell in tile3)
-                    if (cell != null)
-                      yield return cell;
+	    return (from tile1 in tile0 where tile1 != null
+				from tile2 in tile1 where tile2 != null
+				from tile3 in tile2 where tile3 != null
+				from cell in tile3 where cell != null
+				select cell).GetEnumerator();
     }
 
-    SC.IEnumerator SC.IEnumerable.GetEnumerator() {
+	  SC.IEnumerator SC.IEnumerable.GetEnumerator() {
       return GetEnumerator();
     }
 

@@ -26,11 +26,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Corecalc.Funcalc;    // ExternalFunction, SdfInfo, SdfManager ... 
 using System.Diagnostics;
-using System.Reflection;   // TargetInvocationException
 using System.Linq;
+using System.Reflection;
+
+using Corecalc.Funcalc;
+// ExternalFunction, SdfInfo, SdfManager ... 
+// TargetInvocationException
 
 namespace Corecalc {
   /// <summary>
@@ -51,8 +53,8 @@ namespace Corecalc {
     // Used by the SDF machinery to update a placeholder function
     public void UpdateApplier(Applier applier, bool isVolatile) {
       Debug.Assert(IsPlaceHolder);
-      this.Applier = applier;
-      this.IsPlaceHolder = false;
+      Applier = applier;
+      IsPlaceHolder = false;
       this.isVolatile = isVolatile;
     }
 
@@ -66,7 +68,7 @@ namespace Corecalc {
       int count = 0;
       foreach (Value outerV in vs)
         outerV.Apply(delegate(Value v) {
-          double Y = NumberValue.ToDoubleOrNan(v) - C, T = S + Y;
+          double Y = Value.ToDoubleOrNan(v) - C, T = S + Y;
           C = (T - S) - Y;
           S = T;
           count++;
@@ -227,7 +229,7 @@ namespace Corecalc {
       double count = 0.0;
       v1.Apply(delegate(Value v) {
         if (!Double.IsNaN(count)) {
-          double condition = NumberValue.ToDoubleOrNan(fv.Call1(v));
+          double condition = Value.ToDoubleOrNan(fv.Call1(v));
           if (Double.IsNaN(condition))
             count = condition; // Hack: Error propagation from predicate
           else if (condition != 0)
@@ -388,7 +390,7 @@ namespace Corecalc {
     }
 
     public static double IsArray(Value v0) {
-      if (v0 is ErrorValue) return (v0 as ErrorValue).ErrorNan;
+      if (v0 is ErrorValue) return ((ErrorValue)v0).ErrorNan;
       if (v0 == null)
         return ErrorValue.argTypeError.ErrorNan;
       else
@@ -397,7 +399,7 @@ namespace Corecalc {
 
     // This is Excel ISERROR; Excel ISERR does not consider #N/A an error
     public static double IsError(Value v0) {
-      return v0 as ErrorValue != null ? 1.0 : 0.0;
+      return v0 is ErrorValue ? 1.0 : 0.0;
     }
 
     // Generalized n-argument map
@@ -440,7 +442,7 @@ namespace Corecalc {
       double result = Double.NegativeInfinity;
       foreach (Value outerV in vs)
         outerV.Apply(delegate(Value v) {
-          result = Math.Max(result, NumberValue.ToDoubleOrNan(v));
+          result = Math.Max(result, Value.ToDoubleOrNan(v));
         });
       return result;
     }
@@ -449,7 +451,7 @@ namespace Corecalc {
       double result = Double.PositiveInfinity;
       foreach (Value outerV in vs)
         outerV.Apply(delegate(Value v) {
-          result = Math.Min(result, NumberValue.ToDoubleOrNan(v));
+          result = Math.Min(result, Value.ToDoubleOrNan(v));
         });
       return result;
     }
@@ -537,7 +539,7 @@ namespace Corecalc {
       double S = 0.0, C = 0.0;
       foreach (Value outerV in vs)
         outerV.Apply(delegate(Value v) {
-          double Y = NumberValue.ToDoubleOrNan(v) - C, T = S + Y;
+          double Y = Value.ToDoubleOrNan(v) - C, T = S + Y;
           C = (T - S) - Y;
           S = T;
         });
@@ -558,14 +560,14 @@ namespace Corecalc {
             for (int r = 0; r < rows; r++) {
               Value v = arr[c, r];
               if (v != null) { // Only non-blank cells contribute
-                double Y = NumberValue.ToDoubleOrNan(v) - C, T = S + Y;
+                double Y = Value.ToDoubleOrNan(v) - C, T = S + Y;
                 C = (T - S) - Y;
                 S = T;
               }
             }
         }
         else if (outerV != null) {
-          double Y = NumberValue.ToDoubleOrNan(outerV) - C, T = S + Y;
+          double Y = Value.ToDoubleOrNan(outerV) - C, T = S + Y;
           C = (T - S) - Y;
           S = T;
         }
@@ -584,11 +586,11 @@ namespace Corecalc {
       double S = 0.0, C = 0.0;
       v1.Apply(delegate(Value v) {
           if (!Double.IsNaN(S)) {
-            double condition = NumberValue.ToDoubleOrNan(fv.Call1(v));
+            double condition = Value.ToDoubleOrNan(fv.Call1(v));
             if (Double.IsNaN(condition))
               S = condition; // Error propagation from predicate
             else if (condition != 0) {
-              double Y = NumberValue.ToDoubleOrNan(v) - C, T = S + Y;
+              double Y = Value.ToDoubleOrNan(v) - C, T = S + Y;
               C = (T - S) - Y;
               S = T;
             }
@@ -656,9 +658,9 @@ namespace Corecalc {
           cols = Math.Max(cols, 1);
           rows += 1;
         }
-      foreach (Value v in vs)
-        if (v is ArrayValue && (v as ArrayValue).Cols != cols)
-          return ErrorValue.Make("#ERR: Column counts differ");
+      if (vs.Any(v => v is ArrayValue && ((ArrayValue)v).Cols != cols)) {
+	      return ErrorValue.Make("#ERR: Column counts differ");
+      }
       Value[,] result = new Value[cols, rows];
       int nextRow = 0;
       foreach (Value v in vs)
@@ -843,19 +845,19 @@ namespace Corecalc {
       // AND : number* -> number, 
       new Function("AND",   // Variadic, and non-strict in args 2, 3, ...
           delegate(Sheet sheet, Expr[] es, int col, int row) {
-            for (int i = 0; i < es.Length; i++) {
-              Value vi = es[i].Eval(sheet, col, row);
-              NumberValue ni = vi as NumberValue;
-              if (ni != null) {
-                if (ni.value == 0)
-                  return NumberValue.ZERO;
-              } else if (vi is ErrorValue)
-                return vi;
-              else
-                return ErrorValue.argTypeError;
-            }
-            return NumberValue.ONE;
-          });
+			  foreach (Expr expr in es) {
+				  Value vi = expr.Eval(sheet, col, row);
+				  NumberValue ni = vi as NumberValue;
+				  if (ni != null) {
+					  if (Math.Abs(ni.value) < .001)
+						  return NumberValue.ZERO;
+				  } else if (vi is ErrorValue)
+					  return vi;
+				  else
+					  return ErrorValue.argTypeError;
+			  }
+			  return NumberValue.ONE;
+		  });
       // APPLY(fv,a1...an) applies closure fv to arguments a1...an, n>=0
       new Function("APPLY",  // Variadic
         MakeFunction(delegate(Value[] vs) {
@@ -969,7 +971,7 @@ namespace Corecalc {
               Value v0 = es[0].Eval(sheet, col, row);
               NumberValue n0 = v0 as NumberValue;
               if (n0 != null && !Double.IsInfinity(n0.value) && !Double.IsNaN(n0.value))
-                if (n0.value != 0)
+                if (Math.Abs(n0.value) > .001)
                   return es[1].Eval(sheet, col, row);
                 else
                   return es[2].Eval(sheet, col, row);
@@ -994,25 +996,23 @@ namespace Corecalc {
       new Function("MIN", MakeNumberFunction(Min));
       // NOT : number -> number, 
       new Function("NOT",
-        MakeNumberFunction(delegate(double n0) {
-          return Double.IsNaN(n0) ? n0 : n0 == 0 ? 1.0 : 0.0;
-        }));
+        MakeNumberFunction(n0 => double.IsNaN(n0) ? n0 : Math.Abs(n0) < .001 ? 1.0 : 0.0));
       // OR : number number -> number, 
       new Function("OR",  // Variadic, and non-strict in args 2, 3, ...
           delegate(Sheet sheet, Expr[] es, int col, int row) {
-            for (int i = 0; i < es.Length; i++) {
-              Value vi = es[i].Eval(sheet, col, row);
-              NumberValue ni = vi as NumberValue;
-              if (ni != null) {
-                if (ni.value != 0)
-                  return NumberValue.ONE;
-              } else if (vi is ErrorValue)
-                return vi;
-              else
-                return ErrorValue.argTypeError;
-            }
-            return NumberValue.ZERO;
-          });
+			  foreach (Expr expr in es) {
+				  Value vi = expr.Eval(sheet, col, row);
+				  NumberValue ni = vi as NumberValue;
+				  if (ni != null) {
+					  if (ni.value != 0)
+						  return NumberValue.ONE;
+				  } else if (vi is ErrorValue)
+					  return vi;
+				  else
+					  return ErrorValue.argTypeError;
+			  }
+			  return NumberValue.ZERO;
+		  });
       // REDUCE: function * value * array -> value
       new Function("REDUCE", MakeFunction(Reduce));
       // ROWMAP : function * array -> array
@@ -1049,9 +1049,9 @@ namespace Corecalc {
     internal Function(String name, Applier applier, int fixity = 0,
       bool placeHolder = false, bool isVolatile = false) {
       this.name = name;
-      this.Applier = applier;
+      Applier = applier;
       this.fixity = fixity;
-      this.IsPlaceHolder = placeHolder;
+      IsPlaceHolder = placeHolder;
       this.isVolatile = isVolatile;
       table[name] = this;  // For Funsheet
     }

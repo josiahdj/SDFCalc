@@ -25,7 +25,6 @@
 // ----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using Corecalc.IO;
 
@@ -34,27 +33,26 @@ namespace Corecalc {
   /// Class Program contains the Main function to start the GUI version of
   /// Funcalc.
   /// </summary>
-  class Program {
-    [STAThread]
-    public static void Main(String[] args) {
-      if (args.Length == 0) {
-        // GUI, with new empty workbook
-        new WorkbookForm(new Workbook(), display: true);
-        return;
-      } else if (args.Length == 1) {
-        FileInfo fi = new FileInfo(args[0]);
-        Console.WriteLine(fi);
-        switch (fi.Extension) {
-          case ".xml": // Attempt to open existing workbook in GUI
-            Workbook wb = new WorkBookIO().Read(fi.FullName);
-            if (wb != null)
-              new WorkbookForm(wb, display: true);
-            return;
-          default:
-            break;
-        }
-      }
-      Console.WriteLine("Usage: Funcalc [workbook.xml]\n");
-    }
+  static class Program {
+	  [STAThread]
+	  public static void Main(String[] args) {
+		  if (args.Length == 0) {
+			  // GUI, with new empty workbook
+			  new WorkbookForm(new Workbook(), display: true);
+			  return;
+		  }
+		  if (args.Length == 1) {
+			  FileInfo fi = new FileInfo(args[0]);
+			  Console.WriteLine(fi);
+			  switch (fi.Extension) {
+				  case ".xml": // Attempt to open existing workbook in GUI
+					  Workbook wb = new WorkBookIO().Read(fi.FullName);
+					  if (wb != null)
+						  new WorkbookForm(wb, display: true);
+					  return;
+			  }
+		  }
+		  Console.WriteLine("Usage: Funcalc [workbook.xml]\n");
+	  }
   }
 }

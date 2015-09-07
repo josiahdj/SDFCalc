@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
+using System.Linq;
 
 // Class Expr and its subclasses are used to recursively build formulas
 
@@ -346,10 +347,7 @@ namespace Corecalc {
       get {
         if (function.IsVolatile(es))
           return true;
-        foreach (Expr e in es)
-          if (e.IsVolatile)
-            return true;
-        return false;
+	      return es.Any(e => e.IsVolatile);
       }
     }
 

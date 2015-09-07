@@ -26,6 +26,8 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
+
 using SC = System.Collections;
 
 // Delegate types, exception classes, formula formatting options, 
@@ -86,31 +88,14 @@ namespace Corecalc {
 
   public class Formats {
     public enum RefType { A1, C0R0, R1C1 }
-    private bool showFormulas = false;
-    private RefType refFmt = RefType.A1;
-    private char argDelim = ',';
-    private char rangeDelim = ':';
 
-    public RefType RefFmt {
-      get { return refFmt; }
-      set { refFmt = value; }
-    }
+	public RefType RefFmt { get; set; } = RefType.A1;
 
-    public char RangeDelim {
-      get { return rangeDelim; }
-      set { rangeDelim = value; }
-    }
+	public char RangeDelim { get; set; } = ':';
 
-    public char ArgDelim {
-      get { return argDelim; }
-      set { argDelim = value; }
-    }
+	public char ArgDelim { get; set; } = ',';
 
-    public bool ShowFormulas
-    {
-      get { return showFormulas; }
-      set { showFormulas = value; }
-    }
+	public bool ShowFormulas { get; set; }
   }
 
   // ----------------------------------------------------------------
@@ -153,11 +138,10 @@ namespace Corecalc {
     }
 
     public IEnumerable<KeyValuePair<T,int>> ItemMultiplicities() {
-      foreach (KeyValuePair<T, int> entry in multiplicity)
-        yield return entry;
+	    return multiplicity;
     }
 
-    public void Clear() {
+	  public void Clear() {
       multiplicity.Clear();
     }
 
@@ -227,12 +211,9 @@ namespace Corecalc {
     }
 
     public bool UnsequencedEquals(HashList<T> that) {
-      if (this.Count != that.Count)
+      if (Count != that.Count)
         return false;
-      foreach (T x in this.seq)
-        if (!that.set.Contains(x))
-          return false;
-      return true;
+	  return seq.All(x => that.set.Contains(x));
     }
 
     public T[] ToArray() {
