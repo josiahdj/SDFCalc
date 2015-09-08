@@ -1,6 +1,9 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGComposite represents an expression that may have subexpressions, 

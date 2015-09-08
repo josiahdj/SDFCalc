@@ -25,19 +25,15 @@
 
 using System;
 using System.Collections.Generic;
-// Stopwatch
-using System.Globalization; // CultureInfo
-// MemoryStream, Stream
+using System.Linq;
 using System.Text;
-
-using Corecalc;
 
 namespace Corecalc.IO {
 	/// <summary>
 	/// A WorkBookIO can read certain XML workbook files.
 	/// </summary>
 	public class WorkBookIO {
-		private List<IOFormat> formats;
+		private readonly List<IOFormat> formats;
 		private IOFormat defaultformat;
 
 		public WorkBookIO() {
@@ -56,12 +52,7 @@ namespace Corecalc.IO {
 		private IOFormat FindFormat(String filename) {
 			String[] fields = filename.Split((".").ToCharArray());
 			String ext = fields[fields.Length - 1];
-			foreach (IOFormat format in formats) {
-				if (format.ValidExtension(ext)) {
-					return format;
-				}
-			}
-			return null;
+			return formats.FirstOrDefault(format => format.ValidExtension(ext));
 		}
 
 		// Attempt to read workbook from file using a supported 
@@ -70,12 +61,7 @@ namespace Corecalc.IO {
 		public Workbook Read(String filename) {
 			IOFormat format = FindFormat(filename);
 			// If we found a format, try it
-			if (format != null) {
-				return format.Read(filename);
-			}
-			else {
-				return null;
-			}
+			return format?.Read(filename);
 		}
 
 		public String SupportedFormatFilter() {

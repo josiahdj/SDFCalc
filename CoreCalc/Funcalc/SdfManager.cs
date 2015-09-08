@@ -30,6 +30,9 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Linq;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// SfdManager holds the catalog of sheet defined functions.

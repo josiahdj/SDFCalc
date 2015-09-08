@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGAnd represents a variadic AND operation, strict only

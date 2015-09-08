@@ -28,6 +28,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Expressions;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGExpressionBuilder is an expression visitor that builds a CGExpr 

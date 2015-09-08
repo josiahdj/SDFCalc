@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGNormalCellRef is a reference to a cell in an ordinary sheet, not 

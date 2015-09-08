@@ -2,6 +2,9 @@ using System;
 using System.Reflection;
 using System.Reflection.Emit;
 
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGValueConst is a general constant-valued expression; arises

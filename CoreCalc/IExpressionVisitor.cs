@@ -1,3 +1,5 @@
+using CoreCalc.Expressions;
+
 namespace Corecalc {
 	/// <summary>
 	/// An IExpressionVisitor is used to traverse the Expr abstract syntax used in formulas.

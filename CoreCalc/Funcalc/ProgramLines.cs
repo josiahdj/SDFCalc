@@ -30,6 +30,11 @@ using System.Text;
 using System.Diagnostics;
 using System.Linq;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A ProgramLines object holds the cells involved in the definitions of 

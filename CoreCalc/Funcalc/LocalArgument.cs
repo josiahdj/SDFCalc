@@ -1,6 +1,8 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A LocalArgument represents a .NET IL function argument holding

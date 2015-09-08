@@ -4,6 +4,10 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGCachedExpr holds a number-valued expression and its cached value;

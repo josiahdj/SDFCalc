@@ -29,6 +29,10 @@ using System.Text;
 
 using Corecalc;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A DependencyGraph is a graph representation of the dependencies between the function sheet 

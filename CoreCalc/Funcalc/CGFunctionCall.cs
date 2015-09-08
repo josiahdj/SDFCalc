@@ -1,5 +1,7 @@
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGFunctionCall is a call to a fixed-arity or variable-arity 

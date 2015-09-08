@@ -1,5 +1,7 @@
 using System.Linq;
 
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A Conj is conjunction of ordered path conditions.

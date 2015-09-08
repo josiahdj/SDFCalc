@@ -3,6 +3,9 @@ using System.Diagnostics;
 using System.Reflection.Emit;
 using System.Text;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A ComputeCell represents a (intermediate or output) cell of a sheet-defined 

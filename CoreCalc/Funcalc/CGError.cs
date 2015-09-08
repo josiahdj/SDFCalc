@@ -1,6 +1,8 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGError is a constant error-valued expression, such as an

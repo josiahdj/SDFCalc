@@ -1,5 +1,8 @@
 using System.Reflection.Emit;
 
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGApply is a call to the APPLY function; its first argument must 

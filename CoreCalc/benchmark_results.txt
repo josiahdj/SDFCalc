@@ -1,0 +1,8 @@
+=== Benchmark workbook called: 
+[Workbook full recalculation rebuild] Average of the 10 runs: 1.00 ms
+=== Benchmark workbook called: 
+[Workbook full recalculation rebuild] Average of the 10 runs: 0.30 ms
+=== Benchmark workbook called: 
+[Workbook full recalculation] Average of the 10 runs: 0.00 ms
+=== Benchmark workbook called: 
+[Workbook full recalculation rebuild] Average of the 10 runs: 0.20 ms

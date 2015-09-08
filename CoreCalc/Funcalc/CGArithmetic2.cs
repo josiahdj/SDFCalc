@@ -1,6 +1,8 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGArithmetic2 is an application of a two-argument numeric-valued 

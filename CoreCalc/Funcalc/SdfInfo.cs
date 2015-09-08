@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Expressions;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// An SdfInfo instance represents a compiled sheet-defined function (SDF).

@@ -27,6 +27,8 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A PathCond represents an evaluation condition.

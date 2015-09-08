@@ -27,6 +27,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CellsUsedInFunctions maps each function sheet cell to the

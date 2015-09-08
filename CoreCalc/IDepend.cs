@@ -1,5 +1,7 @@
 using System;
 
+using CoreCalc.CellAddressing;
+
 namespace Corecalc {
 	/// <summary>
 	/// An IDepend is an object such as Cell, Expr, CGExpr, ComputeCell 

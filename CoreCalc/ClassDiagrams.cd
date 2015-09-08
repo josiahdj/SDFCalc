@@ -1,197 +1,197 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Corecalc.Cell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.Cell" Collapsed="true">
     <Position X="9.5" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAwBAAAIAAAACIAAAIIAAAgAhAkAAAEIAIQBBwBgAA=</HashCode>
-      <FileName>Cell.cs</FileName>
+      <FileName>Cells\Cell.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Corecalc.ArrayFormula" Collapsed="true">
+  <Class Name="CoreCalc.Cells.ArrayFormula" Collapsed="true">
     <Position X="4" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAIAAAACIAAAIIAAAgABAEAAAAAAIABAgRgAA=</HashCode>
-      <FileName>ArrayFormula.cs</FileName>
+      <FileName>Cells\ArrayFormula.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ConstCell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.ConstCell" Collapsed="true">
     <Position X="9.5" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAAAAAACIAAAIAAAAAABAAAAAAAAIAAAgBgAA=</HashCode>
-      <FileName>ConstCell.cs</FileName>
+      <FileName>Cells\ConstCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.Formula" Collapsed="true">
+  <Class Name="CoreCalc.Cells.Formula" Collapsed="true">
     <Position X="15.25" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQBAAgYAAAACIAAAIIAAAgABAEAAAGCBIACAoBgAA=</HashCode>
-      <FileName>Formula.cs</FileName>
+      <FileName>Cells\Formula.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.BlankCell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.BlankCell" Collapsed="true">
     <Position X="6.25" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BlankCell.cs</FileName>
+      <FileName>Cells\BlankCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.NumberCell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.NumberCell" Collapsed="true">
     <Position X="8.5" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAgAAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>NumberCell.cs</FileName>
+      <FileName>Cells\NumberCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.QuoteCell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.QuoteCell" Collapsed="true">
     <Position X="10.75" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAgAAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>QuoteCell.cs</FileName>
+      <FileName>Cells\QuoteCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.TextCell" Collapsed="true">
+  <Class Name="CoreCalc.Cells.TextCell" Collapsed="true">
     <Position X="13" Y="13.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAgAAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>TextCell.cs</FileName>
+      <FileName>Cells\TextCell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.Expr" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.Expr" Collapsed="true">
     <Position X="9.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIIAAAAIAAAIAAAAAgBAEAAAAAAoAAAABoAA=</HashCode>
-      <FileName>Expr.cs</FileName>
+      <FileName>Expressions\Expr.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Corecalc.CellArea" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.CellArea" Collapsed="true">
     <Position X="2.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIYQAAAIAgAAAFAAAgBAEAICAAAgAAAgBIAA=</HashCode>
-      <FileName>CellArea.cs</FileName>
+      <FileName>Expressions\CellArea.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Corecalc.CellRef" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.CellRef" Collapsed="true">
     <Position X="5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIYQAAAIAgAAAEIAAgBAEAIAAEAgAAAABIAA=</HashCode>
-      <FileName>CellRef.cs</FileName>
+      <FileName>Expressions\CellRef.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Corecalc.Const" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.Const" Collapsed="true">
     <Position X="10.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAIAAAAAAAAAABAAAAAAAAgAAAIBIAA=</HashCode>
-      <FileName>Const.cs</FileName>
+      <FileName>Expressions\Const.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.FunCall" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.FunCall" Collapsed="true">
     <Position X="16.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIIAAAAIAAgAAAAAAgBAEAAAAAAgEAAIBIAA=</HashCode>
-      <FileName>FunCall.cs</FileName>
+      <FileName>Expressions\FunCall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.Error" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.Error" Collapsed="true">
     <Position X="7.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAIAAAAAAAAAEAAAAAgAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>Error.cs</FileName>
+      <FileName>Expressions\Error.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.NumberConst" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.NumberConst" Collapsed="true">
     <Position X="9.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAgAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>NumberConst.cs</FileName>
+      <FileName>Expressions\NumberConst.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.TextConst" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.TextConst" Collapsed="true">
     <Position X="11.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAgAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>TextConst.cs</FileName>
+      <FileName>Expressions\TextConst.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ValueConst" Collapsed="true">
+  <Class Name="CoreCalc.Expressions.ValueConst" Collapsed="true">
     <Position X="14" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAgAAEACAAAAAAAAAAAAA=</HashCode>
-      <FileName>ValueConst.cs</FileName>
+      <FileName>Expressions\ValueConst.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.Value" Collapsed="true">
+  <Class Name="CoreCalc.Values.Value" Collapsed="true">
     <Position X="9.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAgBAAAAAADAABAAAAAAAAAABAAAA=</HashCode>
-      <FileName>Value.cs</FileName>
+      <FileName>Values\Value.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Corecalc.ArrayValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.ArrayValue" Collapsed="true">
     <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAFQGCBAACMAAAAABAIAAAAEAACCEAAA=</HashCode>
-      <FileName>ArrayValue.cs</FileName>
+      <FileName>Values\ArrayValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ErrorValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.ErrorValue" Collapsed="true">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAgAIAgUAACWoBAAAABAAAghAIAggAAAABKBACA=</HashCode>
-      <FileName>ErrorValue.cs</FileName>
+      <FileName>Values\ErrorValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.FunctionValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.FunctionValue" Collapsed="true">
     <Position X="10.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAwACAICATwIDEAEgFBEAIAAEEADAYQAEAAAAIYACCQ=</HashCode>
-      <FileName>FunctionValue.cs</FileName>
+      <FileName>Values\FunctionValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.NumberValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.NumberValue" Collapsed="true">
     <Position X="13" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAQAAAAAAwEAAAEgBAAQAAAAAAXgPgiAJgAqoaAAQo=</HashCode>
-      <FileName>NumberValue.cs</FileName>
+      <FileName>Values\NumberValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ObjectValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.ObjectValue" Collapsed="true">
     <Position X="15.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEgBAAAAAAAAAAACAAAAAAAAJAAAA=</HashCode>
-      <FileName>ObjectValue.cs</FileName>
+      <FileName>Values\ObjectValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.TextValue" Collapsed="true">
+  <Class Name="CoreCalc.Values.TextValue" Collapsed="true">
     <Position X="17.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAIgAAAAAAQAQEUkBIAAABCACADAaAAAAAACAIAAAg=</HashCode>
-      <FileName>TextValue.cs</FileName>
+      <FileName>Values\TextValue.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ArrayDouble" Collapsed="true">
+  <Class Name="CoreCalc.Values.ArrayDouble" Collapsed="true">
     <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEQAiAAAAKAAAAABAAAAAAAAAAaAAAA=</HashCode>
-      <FileName>ArrayDouble.cs</FileName>
+      <FileName>Values\ArrayDouble.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ArrayExplicit" Collapsed="true">
+  <Class Name="CoreCalc.Values.ArrayExplicit" Collapsed="true">
     <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAEAIiABAAIAAAACBACAAAAAAAACAAAA=</HashCode>
-      <FileName>ArrayExplicit.cs</FileName>
+      <FileName>Values\ArrayExplicit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Corecalc.ArrayView" Collapsed="true">
+  <Class Name="CoreCalc.Values.ArrayView" Collapsed="true">
     <Position X="6.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAARAAAEAIiABAAIAAAACBAIAAAAAAAAKAAAA=</HashCode>
-      <FileName>ArrayView.cs</FileName>
+      <FileName>Values\ArrayView.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

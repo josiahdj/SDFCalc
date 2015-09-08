@@ -1,6 +1,8 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGClosure is an application of the CLOSURE built-in function.

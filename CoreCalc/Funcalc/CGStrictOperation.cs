@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Expressions;
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGStrictOperation is a composite expression that evaluates all

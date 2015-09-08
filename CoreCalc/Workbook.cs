@@ -32,6 +32,10 @@ using System.Collections.Generic;
 
 using Corecalc.Funcalc;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Types;
+
 namespace Corecalc {
 	/// <summary>
 	/// A Workbook is a collection of distinct named Sheets.

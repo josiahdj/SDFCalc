@@ -75,28 +75,46 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Applier.cs" />
-    <Compile Include="ArrayDouble.cs" />
-    <Compile Include="ArrayExplicit.cs" />
-    <Compile Include="ArrayFormula.cs" />
-    <Compile Include="ArrayValue.cs" />
-    <Compile Include="ArrayView.cs" />
+    <Compile Include="CellAddressing\Adjusted.cs" />
+    <Compile Include="CellAddressing\FullCellAddr.cs" />
+    <Compile Include="CellAddressing\Interval.cs" />
+    <Compile Include="CellAddressing\RARef.cs" />
+    <Compile Include="CellAddressing\SupportArea.cs" />
+    <Compile Include="CellAddressing\SupportCell.cs" />
+    <Compile Include="CellAddressing\SupportRange.cs" />
+    <Compile Include="CellAddressing\SupportSet.cs" />
+    <Compile Include="Coco\Buffer.cs" />
+    <Compile Include="Coco\Errors.cs" />
+    <Compile Include="Coco\FatalError.cs" />
+    <Compile Include="Coco\Token.cs" />
+    <Compile Include="Coco\UTF8Buffer.cs" />
+    <Compile Include="GUI\ClipboardCell.cs" />
+    <Compile Include="GUI\SheetTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SheetRep.cs" />
+    <Compile Include="Values\ArrayDouble.cs" />
+    <Compile Include="Values\ArrayExplicit.cs" />
+    <Compile Include="Cells\ArrayFormula.cs" />
+    <Compile Include="Values\ArrayValue.cs" />
+    <Compile Include="Values\ArrayView.cs" />
     <Compile Include="Benchmarks\Benchmarks.cs" />
-    <Compile Include="BlankCell.cs" />
-    <Compile Include="CachedArrayFormula.cs" />
-    <Compile Include="CellArea.cs" />
-    <Compile Include="CellRef.cs" />
-    <Compile Include="Cell.cs" />
-    <Compile Include="CellAddressing.cs" />
-    <Compile Include="CellState.cs" />
-    <Compile Include="Const.cs" />
-    <Compile Include="ConstCell.cs" />
-    <Compile Include="Error.cs" />
-    <Compile Include="ErrorValue.cs" />
-    <Compile Include="Expr.cs" />
+    <Compile Include="Cells\BlankCell.cs" />
+    <Compile Include="Types\CachedArrayFormula.cs" />
+    <Compile Include="Expressions\CellArea.cs" />
+    <Compile Include="Expressions\CellRef.cs" />
+    <Compile Include="Cells\Cell.cs" />
+    <Compile Include="CellAddressing\CellAddr.cs" />
+    <Compile Include="Types\CellState.cs" />
+    <Compile Include="Expressions\Const.cs" />
+    <Compile Include="Cells\ConstCell.cs" />
+    <Compile Include="Expressions\Error.cs" />
+    <Compile Include="Values\ErrorValue.cs" />
+    <Compile Include="Expressions\Expr.cs" />
     <Compile Include="Coco\Parser.cs" />
     <Compile Include="Coco\Scanner.cs" />
-    <Compile Include="Formats.cs" />
-    <Compile Include="Formula.cs" />
+    <Compile Include="Types\Formats.cs" />
+    <Compile Include="Cells\Formula.cs" />
     <Compile Include="Funcalc\ArrayType.cs" />
     <Compile Include="Funcalc\CachedAtom.cs" />
     <Compile Include="Funcalc\CGAnd.cs" />
@@ -145,52 +163,47 @@
     <Compile Include="Funcalc\SimpleType.cs" />
     <Compile Include="Funcalc\Typ.cs" />
     <Compile Include="Funcalc\UnwrapInputCell.cs" />
-    <Compile Include="FunCall.cs" />
-    <Compile Include="Functions.cs" />
-    <Compile Include="FunctionValue.cs" />
+    <Compile Include="Expressions\FunCall.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="Values\FunctionValue.cs" />
     <Compile Include="GUI\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\GUI.cs">
+    <Compile Include="GUI\WorkbookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\GUI.Designer.cs">
-      <DependentUpon>GUI.cs</DependentUpon>
+    <Compile Include="GUI\WorkbookForm.Designer.cs">
+      <DependentUpon>WorkbookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\SDF.cs">
+    <Compile Include="GUI\SdfForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\SDF.Designer.cs">
-      <DependentUpon>SDF.cs</DependentUpon>
+    <Compile Include="GUI\SdfForm.Designer.cs">
+      <DependentUpon>SdfForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HashBag.cs" />
-    <Compile Include="HashList.cs" />
+    <Compile Include="Types\HashBag.cs" />
+    <Compile Include="Types\HashList.cs" />
     <Compile Include="IDepend.cs" />
     <Compile Include="IExpressionVisitor.cs" />
-    <Compile Include="ImpossibleException.cs" />
+    <Compile Include="Types\ImpossibleException.cs" />
     <Compile Include="IO\IOFormat.cs" />
     <Compile Include="IO\WorkbookIO.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="IO\XMLSSIOFormat.cs" />
-    <Compile Include="NotImplementedException.cs" />
-    <Compile Include="NumberCell.cs" />
-    <Compile Include="NumberConst.cs" />
-    <Compile Include="NumberValue.cs" />
-    <Compile Include="ObjectValue.cs" />
+    <Compile Include="Types\NotImplementedException.cs" />
+    <Compile Include="Cells\NumberCell.cs" />
+    <Compile Include="Expressions\NumberConst.cs" />
+    <Compile Include="Values\NumberValue.cs" />
+    <Compile Include="Values\ObjectValue.cs" />
     <Compile Include="Program.cs">
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="QuoteCell.cs" />
-    <Compile Include="RefSet.cs" />
+    <Compile Include="Cells\QuoteCell.cs" />
+    <Compile Include="Types\RefSet.cs" />
     <Compile Include="Sheet.cs" />
     <Compile Include="Funcalc\CellsUsedInFunctions.cs" />
     <Compile Include="Funcalc\DependencyGraph.cs" />
@@ -202,14 +215,14 @@
     <Compile Include="Funcalc\CodeGenerate.cs" />
     <Compile Include="Funcalc\ProgramLines.cs" />
     <Compile Include="Funcalc\Variable.cs" />
-    <Compile Include="TextCell.cs" />
-    <Compile Include="TextConst.cs" />
-    <Compile Include="TextValue.cs" />
-    <Compile Include="CyclicException.cs" />
-    <Compile Include="Value.cs" />
-    <Compile Include="ValueCache.cs" />
-    <Compile Include="ValueConst.cs" />
-    <Compile Include="ValueTable.cs" />
+    <Compile Include="Cells\TextCell.cs" />
+    <Compile Include="Expressions\TextConst.cs" />
+    <Compile Include="Values\TextValue.cs" />
+    <Compile Include="Types\CyclicException.cs" />
+    <Compile Include="Values\Value.cs" />
+    <Compile Include="Types\ValueCache.cs" />
+    <Compile Include="Expressions\ValueConst.cs" />
+    <Compile Include="Types\ValueTable.cs" />
     <Compile Include="Workbook.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -227,29 +240,16 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GUI.resx">
+    <EmbeddedResource Include="GUI\WorkbookForm.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>GUI.cs</DependentUpon>
+      <DependentUpon>WorkbookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\SDF.resx">
+    <EmbeddedResource Include="GUI\SdfForm.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>SDF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <DependentUpon>SdfForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Externals\Externals.csproj">
-      <Project>{3FD58148-0681-4784-AAE1-6DBC501425E4}</Project>
-      <Name>Externals</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>

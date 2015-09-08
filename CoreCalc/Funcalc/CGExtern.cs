@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGExtern is a call to EXTERN, ie. an external .NET function.

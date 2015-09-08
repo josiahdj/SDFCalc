@@ -5,6 +5,11 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Cells;
+using CoreCalc.Expressions;
+using CoreCalc.Types;
+
 namespace Corecalc.IO {
 	/// <summary>
 	/// Class XMLSSIOFormat can read XMLSS (Excel 2003 XML format) workbook files.
@@ -24,10 +29,10 @@ namespace Corecalc.IO {
 							 Sheet sheet,
 							 int row,
 							 IDictionary<string, Cell> cellParsingCache) {
-			/* XMLSS has origo at (1,1) = (A,1) whereas Corecalc internal 
-       * representation has origo at (0,0) = (A,1).  Hence the col 
-       * and row indices are 1 higher in this method.
-       */
+			/* XMLSS has origin at (1,1) = (A,1) whereas Corecalc internal 
+			* representation has origin at (0,0) = (A,1).  Hence the col 
+			* and row indices are 1 higher in this method.
+			*/
 			int cellCount = 0;
 			int col = 0;
 			XmlReader cellreader = rowreader.ReadSubtree();
@@ -50,7 +55,7 @@ namespace Corecalc.IO {
 				cellCount++;
 				// If an array result occupies cells, do not overwrite
 				// the formula with precomputed and cached data from 
-				// the XMLSS file. Instead skip the parsing and sheetupdate.
+				// the XMLSS file. Instead skip the parsing and sheet update.
 				if (sheet[col - 1, row - 1] != null) {
 					continue;
 				}
@@ -111,13 +116,11 @@ namespace Corecalc.IO {
 						raref2 = new RARef(split[1]);
 					}
 
-					if (raref1 != null && raref2 != null) {
-						CellAddr ulCa = raref1.Addr(col - 1, row - 1);
-						CellAddr lrCa = raref2.Addr(col - 1, row - 1);
-						// This also updates support sets, but that's useless, because 
-						// they will subsequently be reset by RebuildSupportGraph
-						sheet.SetArrayFormula(cell, col - 1, row - 1, ulCa, lrCa);
-					}
+					CellAddr ulCa = raref1.Addr(col - 1, row - 1);
+					CellAddr lrCa = raref2.Addr(col - 1, row - 1);
+					// This also updates support sets, but that's useless, because 
+					// they will subsequently be reset by RebuildSupportGraph
+					sheet.SetArrayFormula(cell, col - 1, row - 1, ulCa, lrCa);
 				}
 				else { // One-cell formula, or constant
 					sheet[col - 1, row - 1] = cell;
@@ -192,8 +195,8 @@ namespace Corecalc.IO {
 			switch (funCall.function.name) {
 				case "DEFINE":
 					if (es.Length >= 2 && es[0] is TextConst && es[1] is CellRef) {
-						String sdfName = (es[0] as TextConst).value.value;
-						FullCellAddr outputCell = (es[1] as CellRef).GetAbsoluteAddr(sheet, col, row);
+						String sdfName = ((TextConst)es[0]).value.value;
+						FullCellAddr outputCell = ((CellRef)es[1]).GetAbsoluteAddr(sheet, col, row);
 						FullCellAddr[] inputCells = new FullCellAddr[es.Length - 2];
 						bool ok = true;
 						for (int i = 2; ok && i < es.Length; i++) {
@@ -209,9 +212,6 @@ namespace Corecalc.IO {
 					}
 					break;
 				case "DELAY":
-					break;
-				default:
-					/* do nothing */
 					break;
 			}
 		}
@@ -231,8 +231,8 @@ namespace Corecalc.IO {
 			switch (funCall.function.name) {
 				case "DEFINE":
 					if (es.Length >= 2 && es[0] is TextConst && es[1] is CellRef) {
-						String sdfName = (es[0] as TextConst).value.value;
-						FullCellAddr outputCell = (es[1] as CellRef).GetAbsoluteAddr(sheet, col, row);
+						String sdfName = ((TextConst)es[0]).value.value;
+						FullCellAddr outputCell = ((CellRef)es[1]).GetAbsoluteAddr(sheet, col, row);
 						FullCellAddr[] inputCells = new FullCellAddr[es.Length - 2];
 						bool ok = true;
 						for (int i = 2; ok && i < es.Length; i++) {
@@ -246,9 +246,6 @@ namespace Corecalc.IO {
 							Funcalc.SdfManager.CreateFunction(sdfName, outputCell, inputCells);
 						}
 					}
-					break;
-				default:
-					/* do nothing */
 					break;
 			}
 		}
@@ -314,15 +311,11 @@ namespace Corecalc.IO {
 			watch.Reset();
 			watch.Start();
 			try {
-				reader = new XmlTextReader(filename);
-				reader.WhitespaceHandling = WhitespaceHandling.None;
+				reader = new XmlTextReader(filename) {WhitespaceHandling = WhitespaceHandling.None};
 				wb = MakeEmptySheets(reader);
-				if (reader != null) {
-					reader.Close();
-				}
+				reader.Close();
 				if (wb != null) {
-					reader = new XmlTextReader(filename);
-					reader.WhitespaceHandling = WhitespaceHandling.None;
+					reader = new XmlTextReader(filename) {WhitespaceHandling = WhitespaceHandling.None};
 					ParseWorkBook(reader, wb);
 				}
 			}
@@ -331,9 +324,7 @@ namespace Corecalc.IO {
 				MessageBox.Show(msg + "\n" + exn, msg, MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			finally {
-				if (reader != null) {
-					reader.Close();
-				}
+				reader?.Close();
 			}
 			watch.Stop();
 			Console.WriteLine("in {0} ms", watch.ElapsedMilliseconds);

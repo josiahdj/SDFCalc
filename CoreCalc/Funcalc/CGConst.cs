@@ -1,6 +1,10 @@
 using System;
 using System.Collections.Generic;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGConst is a constant expression.

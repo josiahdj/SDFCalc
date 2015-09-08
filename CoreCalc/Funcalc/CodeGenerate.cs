@@ -29,6 +29,10 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// Class CodeGenerate holds all global methods and state for code 

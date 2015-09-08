@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGIf represents an application of the IF built-in function.

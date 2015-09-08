@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGOr represents a variadic OR operation, strict only

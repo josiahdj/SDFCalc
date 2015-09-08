@@ -1,3 +1,6 @@
+using CoreCalc.Expressions;
+using CoreCalc.Values;
+
 namespace Corecalc {
 	/// <summary>
 	/// Applier is the delegate type used to represent implementations of

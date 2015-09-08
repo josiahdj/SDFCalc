@@ -1,5 +1,7 @@
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGTextConst is a constant text-valued expression.

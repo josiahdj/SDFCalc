@@ -1,5 +1,7 @@
 using System.Linq;
 
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A Disj is a disjunction of ordered path conditions.

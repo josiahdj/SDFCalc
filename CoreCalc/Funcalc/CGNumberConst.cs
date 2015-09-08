@@ -1,6 +1,8 @@
 using System;
 using System.Reflection.Emit;
 
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGNumberConst is a constant number-valued expression.

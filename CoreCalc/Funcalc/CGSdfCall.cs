@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection.Emit;
 
+using CoreCalc.Types;
+using CoreCalc.Values;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGSdfCall is a call to a sheet-defined function.

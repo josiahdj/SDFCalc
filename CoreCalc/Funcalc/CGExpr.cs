@@ -28,6 +28,9 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Text;
 
+using CoreCalc.CellAddressing;
+using CoreCalc.Types;
+
 namespace Corecalc.Funcalc {
 	/// <summary>
 	/// A CGExpr represents an expression as used in sheet-defined functions,
