@@ -25,9 +25,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO; // MemoryStream, Stream
-using System.Text;
 using System.Diagnostics;
+
+using Corecalc.IO; // MemoryStream, Stream
 
 namespace Corecalc {
 	/// <summary>
@@ -71,9 +71,7 @@ namespace Corecalc {
 		public static void MarkCellDirty(Sheet sheet, int col, int row) {
 			// Console.WriteLine("MarkDirty({0})", new FullCellAddr(sheet, col, row));
 			Cell cell = sheet[col, row];
-			if (cell != null) {
-				cell.MarkDirty();
-			}
+			cell?.MarkDirty();
 		}
 
 		// Enqueue this cell for evaluation
@@ -82,9 +80,7 @@ namespace Corecalc {
 		// Enqueue the cell at sheet[col, row] for evaluation, if non-null
 		public static void EnqueueCellForEvaluation(Sheet sheet, int col, int row) {
 			Cell cell = sheet[col, row];
-			if (cell != null) {
-				cell.EnqueueForEvaluation(sheet, col, row); // Add if not already added, etc
-			}
+			cell?.EnqueueForEvaluation(sheet, col, row); // Add if not already added, etc
 		}
 
 		// Show computed value; overridden in Formula and ArrayFormula to show cached value
@@ -99,7 +95,7 @@ namespace Corecalc {
 		// Parse string to cell contents at (col, row) in given workbook 
 		public static Cell Parse(String text, Workbook workbook, int col, int row) {
 			if (!String.IsNullOrWhiteSpace(text)) {
-				Scanner scanner = new Scanner(IO.IOFormat.MakeStream(text));
+				Scanner scanner = new Scanner(IOFormat.MakeStream(text));
 				Parser parser = new Parser(scanner);
 				return parser.ParseCell(workbook, col, row); // May be null
 			}
@@ -126,16 +122,12 @@ namespace Corecalc {
 
 		// Remove sheet[col,row] from this cell's support set
 		public void RemoveSupportFor(Sheet sheet, int col, int row) {
-			if (supportSet != null) {
-				supportSet.RemoveCell(sheet, col, row);
-			}
+			supportSet?.RemoveCell(sheet, col, row);
 		}
 
 		// Overridden in ArrayFormula?
 		public virtual void ForEachSupported(Action<Sheet, int, int> act) {
-			if (supportSet != null) {
-				supportSet.ForEachSupported(act);
-			}
+			supportSet?.ForEachSupported(act);
 		}
 
 		// Use at manual cell update, and only if the oldCell is never used again
@@ -193,9 +185,7 @@ namespace Corecalc {
 
 		public override void ResetCellState() { }
 
-		public override bool IsVolatile {
-			get { return false; }
-		}
+		public override bool IsVolatile => false;
 
 		public override void DependsOn(FullCellAddr here, Action<FullCellAddr> dependsOn) { }
 	}
@@ -211,7 +201,7 @@ namespace Corecalc {
 			value = (NumberValue)NumberValue.Make(d);
 		}
 
-		private NumberCell(NumberCell cell) { this.value = cell.value; }
+		private NumberCell(NumberCell cell) { value = cell.value; }
 
 		public override Value Eval(Sheet sheet, int col, int row) { return value; }
 
@@ -228,10 +218,10 @@ namespace Corecalc {
 
 		public QuoteCell(String s) {
 			Debug.Assert(s != null);
-			this.value = TextValue.Make(s); // No interning
+			value = TextValue.Make(s); // No interning
 		}
 
-		private QuoteCell(QuoteCell cell) { this.value = cell.value; }
+		private QuoteCell(QuoteCell cell) { value = cell.value; }
 
 		public override Value Eval(Sheet sheet, int col, int row) { return value; }
 
@@ -248,7 +238,7 @@ namespace Corecalc {
 
 		public TextCell(String s) {
 			Debug.Assert(s != null);
-			this.value = TextValue.Make(s); // No interning
+			value = TextValue.Make(s); // No interning
 		}
 
 		private TextCell(TextCell cell) { this.value = cell.value; }
@@ -353,9 +343,7 @@ namespace Corecalc {
 			e = ae.e;
 		}
 
-		public Value Cached {
-			get { return v; }
-		}
+		public Value Cached => v;
 
 		public override void MarkDirty() {
 			if (state != CellState.Dirty) {
@@ -382,9 +370,7 @@ namespace Corecalc {
 
 		public override Cell CloneCell(int col, int row) { return new Formula(workbook, e.CopyTo(col, row)); }
 
-		public override bool IsVolatile {
-			get { return e.IsVolatile; }
-		}
+		public override bool IsVolatile => e.IsVolatile;
 
 		public override void DependsOn(FullCellAddr here, Action<FullCellAddr> dependsOn) { e.DependsOn(here, dependsOn); }
 
@@ -401,9 +387,7 @@ namespace Corecalc {
 			set { state = value ? CellState.Uptodate : CellState.Dirty; }
 		}
 
-		public Expr Expr {
-			get { return e; }
-		}
+		public Expr Expr => e;
 	}
 
 	/// <summary>
@@ -522,9 +506,7 @@ namespace Corecalc {
 			throw new System.NotImplementedException();
 		}
 
-		public override bool IsVolatile {
-			get { return caf.formula.IsVolatile; }
-		}
+		public override bool IsVolatile => caf.formula.IsVolatile;
 
 		public override void DependsOn(FullCellAddr here, Action<FullCellAddr> dependsOn) {
 			// It seems that this could uselessly be called on every cell 
@@ -543,7 +525,7 @@ namespace Corecalc {
 	/// </summary>
 	internal sealed class CachedArrayFormula {
 		public readonly Formula formula; // Non-null
-		public readonly Sheet sheet; // Sheet containing the array formulas
+		public readonly Sheet _sheet; // Sheet containing the array formulas
 		public readonly int formulaCol, formulaRow; // Location of formula entry
 		public readonly CellAddr ulCa, lrCa; // Corners of array formula
 		private bool supportAdded, supportRemoved; // Referred cells' support sets up to date
@@ -562,7 +544,7 @@ namespace Corecalc {
 			}
 			else {
 				this.formula = formula;
-				this.sheet = sheet;
+				this._sheet = sheet;
 				this.formulaCol = formulaCol;
 				this.formulaRow = formulaRow;
 				this.ulCa = ulCa;
@@ -572,21 +554,19 @@ namespace Corecalc {
 		}
 
 		// Evaluate expression if necessary
-		public Value Eval() { return formula.Eval(sheet, formulaCol, formulaRow); }
+		public Value Eval() { return formula.Eval(_sheet, formulaCol, formulaRow); }
 
 		public CachedArrayFormula MoveContents(int deltaCol, int deltaRow) {
 			// FIXME: Unshares the formula, shouldn't ...
 			return new CachedArrayFormula((Formula)formula.MoveContents(deltaCol, deltaRow),
-										  sheet,
+										  _sheet,
 										  formulaCol,
 										  formulaRow,
 										  ulCa,
 										  lrCa);
 		}
 
-		public Value CachedArray {
-			get { return formula.Cached; }
-		}
+		public Value CachedArray => formula.Cached;
 
 		public void ResetSupportSet() {
 			// Do NOT clear the underlying formula's support set; it will not be recreated
@@ -609,7 +589,7 @@ namespace Corecalc {
 			}
 		}
 
-		public void ForEachReferred(Action<FullCellAddr> act) { formula.ForEachReferred(sheet, formulaCol, formulaRow, act); }
+		public void ForEachReferred(Action<FullCellAddr> act) { formula.ForEachReferred(_sheet, formulaCol, formulaRow, act); }
 
 		public String Show(int col, int row, Formats fo) { return formula.Show(col, row, fo); }
 	}
