@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagrams.cd" />
     <None Include="Coco\Parser.frame" />
     <None Include="Coco\Scanner.frame" />
     <None Include="Coco\Spreadsheet.ATG" />
