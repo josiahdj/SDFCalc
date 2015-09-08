@@ -77,20 +77,26 @@
     <Compile Include="Applier.cs" />
     <Compile Include="ArrayDouble.cs" />
     <Compile Include="ArrayExplicit.cs" />
+    <Compile Include="ArrayFormula.cs" />
     <Compile Include="ArrayValue.cs" />
     <Compile Include="ArrayView.cs" />
     <Compile Include="Benchmarks\Benchmarks.cs" />
+    <Compile Include="BlankCell.cs" />
+    <Compile Include="CachedArrayFormula.cs" />
     <Compile Include="CellArea.cs" />
     <Compile Include="CellRef.cs" />
-    <Compile Include="Cells.cs" />
+    <Compile Include="Cell.cs" />
     <Compile Include="CellAddressing.cs" />
+    <Compile Include="CellState.cs" />
     <Compile Include="Const.cs" />
+    <Compile Include="ConstCell.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="ErrorValue.cs" />
     <Compile Include="Expr.cs" />
     <Compile Include="Coco\Parser.cs" />
     <Compile Include="Coco\Scanner.cs" />
     <Compile Include="Formats.cs" />
+    <Compile Include="Formula.cs" />
     <Compile Include="FunCall.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="FunctionValue.cs" />
@@ -121,6 +127,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NotImplementedException.cs" />
+    <Compile Include="NumberCell.cs" />
     <Compile Include="NumberConst.cs" />
     <Compile Include="NumberValue.cs" />
     <Compile Include="ObjectValue.cs" />
@@ -132,6 +139,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuoteCell.cs" />
     <Compile Include="RefSet.cs" />
     <Compile Include="Sheet.cs" />
     <Compile Include="Funcalc\CellsInFuncs.cs" />
@@ -144,6 +152,7 @@
     <Compile Include="Funcalc\CodeGenerate.cs" />
     <Compile Include="Funcalc\ProgramLines.cs" />
     <Compile Include="Funcalc\Variable.cs" />
+    <Compile Include="TextCell.cs" />
     <Compile Include="TextConst.cs" />
     <Compile Include="TextValue.cs" />
     <Compile Include="CyclicException.cs" />
