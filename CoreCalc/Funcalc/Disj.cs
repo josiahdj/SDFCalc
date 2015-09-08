@@ -47,14 +47,14 @@ namespace Corecalc.Funcalc {
 		public override PathCond AndNot(CachedAtom cond) { return Conj.Make(this, cond.Negate()); }
 
 		public override PathCond Or(PathCond other) {
-			if (other is CachedAtom && conds.Contains((other as CachedAtom).Negate())) {
+			if (other is CachedAtom && conds.Contains(((CachedAtom)other).Negate())) {
 				// Reduce Or(OR(...,e,...), NOT(e)) and Or(OR(...,NOT(e),...), e) to TRUE
 				return TRUE;
 			}
 			else if (other is Disj) {
 				HashList<PathCond> result = new HashList<PathCond>();
 				result.AddAll(conds);
-				foreach (PathCond cond in (other as Disj).conds) {
+				foreach (PathCond cond in ((Disj)other).conds) {
 					if (cond is CachedAtom && conds.Contains((cond as CachedAtom).Negate())) {
 						// Reduce Or(OR(...,e,...),OR(...,NOT(e),...)) to TRUE
 						// and    Or(OR(...,NOT(e),...),OR(...,e,...)) to TRUE
@@ -65,16 +65,13 @@ namespace Corecalc.Funcalc {
 				return Disj.Make(result.ToArray());
 			}
 			else if (other is Conj) {
-				if ((other as Conj).conds.Contains(this)) {
+				if (((Conj)other).conds.Contains(this)) {
 					// Reduce (pi | (p1 & ... & pn)) to pi
 					return this;
 				}
 				else {
-					foreach (PathCond cond in (other as Conj).conds) {
-						if (conds.Contains(cond)) {
-							// Reduce (p1 | ... | pn) | (... & pi & ...) to (p1 | ... | pn)
-							return this;
-						}
+					if (((Conj)other).conds.Any(cond => conds.Contains(cond))) {
+						return this;
 					}
 				}
 				return Disj.Make(AddItem(this.conds, other));
@@ -97,14 +94,10 @@ namespace Corecalc.Funcalc {
 			}
 		}
 
-		public override bool Equals(PathCond other) { return other is Disj && conds.UnsequencedEquals((other as Disj).conds); }
+		public override bool Equals(PathCond other) { return other is Disj && conds.UnsequencedEquals(((Disj)other).conds); }
 
 		public override int GetHashCode() {
-			int result = 0;
-			foreach (PathCond cond in conds) {
-				result = 37*result + cond.GetHashCode();
-			}
-			return result;
+			return conds.Aggregate(0, (current, cond) => 37*current + cond.GetHashCode());
 		}
 
 		public override string ToString() {
