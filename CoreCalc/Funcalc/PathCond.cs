@@ -1,4 +1,4 @@
-// Funcalc, spreadsheet with functions
+﻿// Funcalc, spreadsheet with functions
 // ----------------------------------------------------------------------
 // Copyright (c) 2006-2014 Peter Sestoft and others
 
@@ -24,42 +24,48 @@
 // ----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
 using System.Text;
+using System.Collections.Generic;
 
 namespace Corecalc.Funcalc {
 	/// <summary>
-	/// A Variable represents a cell of a sheet-defined function, whether 
-	/// an argument (input cell) or a computed cell (intermediate or output cell).
+	/// A PathCond represents an evaluation condition.
 	/// </summary>
-	public abstract class Variable : IEquatable<Variable> {
-		private readonly string name;
-		private readonly Typ type;
+	public abstract class PathCond : IEquatable<PathCond> {
+		public static readonly PathCond FALSE = new Disj();
+		public static readonly PathCond TRUE = new Conj();
 
-		public Variable(String name, Typ type) {
-			this.name = name;
-			this.type = type;
+		public abstract PathCond And(CachedAtom expr);
+
+		public abstract PathCond AndNot(CachedAtom expr);
+
+		public abstract PathCond Or(PathCond other);
+
+		public abstract bool Is(bool b);
+
+		public abstract CGExpr ToCGExpr();
+
+		public abstract bool Equals(PathCond other);
+
+		protected static PathCond[] AddItem(IEnumerable<PathCond> set, PathCond item) {
+			HashList<PathCond> result = new HashList<PathCond>();
+			result.AddAll(set);
+			result.Add(item);
+			return result.ToArray();
 		}
 
-		public bool Equals(Variable that) { return this == that; }
-
-		public override bool Equals(Object obj) { return Equals(obj as Variable); }
-
-		public override int GetHashCode() { return base.GetHashCode(); }
-
-		public abstract void EmitLoad(ILGenerator ilg);
-
-		public abstract void EmitStore(ILGenerator ilg);
-
-		public abstract Variable Fresh();
-
-		public String Name {
-			get { return name; }
-		}
-
-		public Typ Type {
-			get { return type; }
+		protected static String FormatInfix(String op, IEnumerable<PathCond> conds) {
+			bool first = true;
+			StringBuilder sb = new StringBuilder();
+			sb.Append("(");
+			foreach (PathCond p in conds) {
+				if (!first) {
+					sb.Append(op);
+				}
+				first = false;
+				sb.Append(p);
+			}
+			return sb.Append(")").ToString();
 		}
 	}
 }

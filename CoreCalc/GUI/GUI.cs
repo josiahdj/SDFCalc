@@ -556,7 +556,7 @@ namespace Corecalc {
 		}
 
 		// Attempt to parse s as cell contents, and set selected cell(s)
-
+		
 		private void SetCell(int col, int row, String text, DataGridViewCellValidatingEventArgs arg = null) {
 			Cell cell = Cell.Parse(text, sheet.workbook, col, row);
 			ArrayFormula oldArrayFormula = sheet[col, row] as ArrayFormula;
