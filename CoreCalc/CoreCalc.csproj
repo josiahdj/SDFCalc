@@ -171,9 +171,11 @@
     <Compile Include="IDepend.cs" />
     <Compile Include="IExpressionVisitor.cs" />
     <Compile Include="ImpossibleException.cs" />
+    <Compile Include="IO\IOFormat.cs" />
     <Compile Include="IO\WorkbookIO.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IO\XMLSSIOFormat.cs" />
     <Compile Include="NotImplementedException.cs" />
     <Compile Include="NumberCell.cs" />
     <Compile Include="NumberConst.cs" />
