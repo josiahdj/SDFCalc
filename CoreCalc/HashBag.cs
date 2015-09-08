@@ -7,10 +7,12 @@ namespace Corecalc {
 
 		public bool Add(T item) {
 			int count;
-			if (multiplicity.TryGetValue(item, out count))
+			if (multiplicity.TryGetValue(item, out count)) {
 				multiplicity[item] = count + 1;
-			else 
+			}
+			else {
 				multiplicity[item] = 1;
+			}
 			return true;
 		}
 
@@ -18,41 +20,43 @@ namespace Corecalc {
 			int count;
 			if (multiplicity.TryGetValue(item, out count)) {
 				count--;
-				if (count == 0)
+				if (count == 0) {
 					multiplicity.Remove(item);
-				else
+				}
+				else {
 					multiplicity[item] = count;
+				}
 				return true;
-			} else
+			}
+			else {
 				return false;
+			}
 		}
-    
+
 		public void AddAll(IEnumerable<T> xs) {
-			foreach (T x in xs)
+			foreach (T x in xs) {
 				Add(x);
+			}
 		}
 
 		public void RemoveAll(IEnumerable<T> xs) {
-			foreach (T x in xs)
+			foreach (T x in xs) {
 				Remove(x);
+			}
 		}
 
-		public IEnumerable<KeyValuePair<T,int>> ItemMultiplicities() {
-			return multiplicity;
-		}
+		public IEnumerable<KeyValuePair<T, int>> ItemMultiplicities() { return multiplicity; }
 
-		public void Clear() {
-			multiplicity.Clear();
-		}
+		public void Clear() { multiplicity.Clear(); }
 
 		public IEnumerator<T> GetEnumerator() {
-			foreach (KeyValuePair<T, int> entry in multiplicity) 
-				for (int i=0; i<entry.Value; i++)
+			foreach (KeyValuePair<T, int> entry in multiplicity) {
+				for (int i = 0; i < entry.Value; i++) {
 					yield return entry.Key;
+				}
+			}
 		}
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
-			return GetEnumerator();
-		}
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { return GetEnumerator(); }
 	}
 }

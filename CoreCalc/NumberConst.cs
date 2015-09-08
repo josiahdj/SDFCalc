@@ -5,7 +5,7 @@ namespace Corecalc {
 	/// <summary>
 	/// A NumberConst is a constant number-valued expression.
 	/// </summary>
-	class NumberConst : Const {
+	internal class NumberConst : Const {
 		public readonly NumberValue value;
 
 		public NumberConst(double d) {
@@ -13,16 +13,10 @@ namespace Corecalc {
 			value = (NumberValue)NumberValue.Make(d);
 		}
 
-		public override Value Eval(Sheet sheet, int col, int row) {
-			return value;
-		}
+		public override Value Eval(Sheet sheet, int col, int row) { return value; }
 
-		internal override void VisitorCall(IExpressionVisitor visitor) {
-			visitor.CallVisitor(this);
-		}
+		internal override void VisitorCall(IExpressionVisitor visitor) { visitor.CallVisitor(this); }
 
-		public override String Show(int col, int row, int ctxpre, Formats fo) {
-			return value.ToString();
-		}
+		public override String Show(int col, int row, int ctxpre, Formats fo) { return value.ToString(); }
 	}
 }

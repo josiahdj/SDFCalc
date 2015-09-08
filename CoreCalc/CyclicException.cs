@@ -31,24 +31,22 @@ using System.Text;
 
 namespace Corecalc {
 	/// <summary>
-  /// A CyclicException signals that a cyclic dependency is discovered 
-  /// during evaluation.
-  /// </summary>
-  public class CyclicException : Exception {
-    public readonly FullCellAddr culprit;
+	/// A CyclicException signals that a cyclic dependency is discovered 
+	/// during evaluation.
+	/// </summary>
+	public class CyclicException : Exception {
+		public readonly FullCellAddr culprit;
 
-    public CyclicException(String msg, FullCellAddr culprit) : base(msg) {
-      this.culprit = culprit;
-    }
-  }
+		public CyclicException(String msg, FullCellAddr culprit) : base(msg) { this.culprit = culprit; }
+	}
 
 	// ----------------------------------------------------------------
-  // Formula formatting options
+	// Formula formatting options
 
 	// ----------------------------------------------------------------
-  // A hash bag, a replacement for C5.HashBag<T>
+	// A hash bag, a replacement for C5.HashBag<T>
 
 	// ----------------------------------------------------------------
-  // An data structure that preserves insertion order of unique elements, 
-  // and fast Contains, Add, AddAll, Intersection, Difference, and UnsequencedEquals 
+	// An data structure that preserves insertion order of unique elements, 
+	// and fast Contains, Add, AddAll, Intersection, Difference, and UnsequencedEquals 
 }

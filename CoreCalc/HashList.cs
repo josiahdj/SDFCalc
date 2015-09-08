@@ -9,15 +9,16 @@ namespace Corecalc {
 		private readonly List<T> seq = new List<T>();
 		private readonly HashSet<T> set = new HashSet<T>();
 
-		public bool Contains(T item) {
-			return set.Contains(item);
+		public bool Contains(T item) { return set.Contains(item); }
+
+		public int Count {
+			get { return seq.Count; }
 		}
 
-		public int Count { get { return seq.Count; }}
-
 		public bool Add(T item) {
-			if (set.Contains(item)) 
+			if (set.Contains(item)) {
 				return false;
+			}
 			else {
 				seq.Add(item);
 				set.Add(item);
@@ -26,8 +27,9 @@ namespace Corecalc {
 		}
 
 		public void AddAll(IEnumerable<T> xs) {
-			foreach (T x in xs)
+			foreach (T x in xs) {
 				Add(x);
+			}
 		}
 
 		public static HashList<T> Union(HashList<T> ha1, HashList<T> ha2) {
@@ -39,36 +41,35 @@ namespace Corecalc {
 
 		public static HashList<T> Intersection(HashList<T> ha1, HashList<T> ha2) {
 			HashList<T> result = new HashList<T>();
-			foreach (T x in ha1)
-				if (ha2.Contains(x))
+			foreach (T x in ha1) {
+				if (ha2.Contains(x)) {
 					result.Add(x);
+				}
+			}
 			return result;
 		}
 
 		public static HashList<T> Difference(HashList<T> ha1, HashList<T> ha2) {
 			HashList<T> result = new HashList<T>();
-			foreach (T x in ha1)
-				if (!ha2.Contains(x))
+			foreach (T x in ha1) {
+				if (!ha2.Contains(x)) {
 					result.Add(x);
+				}
+			}
 			return result;
 		}
 
 		public bool UnsequencedEquals(HashList<T> that) {
-			if (Count != that.Count)
+			if (Count != that.Count) {
 				return false;
+			}
 			return seq.All(x => that.set.Contains(x));
 		}
 
-		public T[] ToArray() {
-			return seq.ToArray();
-		}
+		public T[] ToArray() { return seq.ToArray(); }
 
-		public IEnumerator<T> GetEnumerator() {
-			return seq.GetEnumerator();
-		}
+		public IEnumerator<T> GetEnumerator() { return seq.GetEnumerator(); }
 
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() {
-			return GetEnumerator();
-		}
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { return GetEnumerator(); }
 	}
 }

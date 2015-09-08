@@ -13,12 +13,8 @@ namespace Corecalc {
 			cellAreasSeen.Clear();
 		}
 
-		public bool SeenBefore(CellRef cellRef) {
-			return !cellRefsSeen.Add(cellRef);
-		}
+		public bool SeenBefore(CellRef cellRef) { return !cellRefsSeen.Add(cellRef); }
 
-		public bool SeenBefore(CellArea cellArea) {
-			return !cellAreasSeen.Add(cellArea);
-		}
+		public bool SeenBefore(CellArea cellArea) { return !cellAreasSeen.Add(cellArea); }
 	}
 }

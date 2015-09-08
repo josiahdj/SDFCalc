@@ -30,64 +30,68 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Corecalc.Funcalc;   // SdfInfo, SdfManager
+
+using Corecalc.Funcalc; // SdfInfo, SdfManager
 
 namespace Corecalc.GUI {
-  public partial class SdfForm : Form {
-    private WorkbookForm gui;
+	public partial class SdfForm : Form {
+		private WorkbookForm gui;
 
-    public SdfForm(WorkbookForm gui, Workbook wb) {
-      InitializeComponent();
-      this.gui = gui;
-      PopulateFunctionListBox(false);
-    }
+		public SdfForm(WorkbookForm gui, Workbook wb) {
+			InitializeComponent();
+			this.gui = gui;
+			PopulateFunctionListBox(false);
+		}
 
-    public void PopulateFunctionListBox(bool rememberSelectedIndex) {
-      int selectedIndex = functionsListBox.SelectedIndex;
-      string selectedName = "";
-      if (selectedIndex != -1)
-        selectedName = ((SdfInfo)functionsListBox.Items[selectedIndex]).name;
+		public void PopulateFunctionListBox(bool rememberSelectedIndex) {
+			int selectedIndex = functionsListBox.SelectedIndex;
+			string selectedName = "";
+			if (selectedIndex != -1) {
+				selectedName = ((SdfInfo)functionsListBox.Items[selectedIndex]).name;
+			}
 
-      functionsListBox.Items.Clear();
-      int i = 0;
-      foreach (SdfInfo info in SdfManager.GetAllInfos()) {
-        functionsListBox.Items.Add(info);
-        if (selectedName == info.name)
-          selectedIndex = i;
-        i++;
-      }
-      if (rememberSelectedIndex && selectedIndex != -1)
-        functionsListBox.SelectedIndex = selectedIndex;
-    }
+			functionsListBox.Items.Clear();
+			int i = 0;
+			foreach (SdfInfo info in SdfManager.GetAllInfos()) {
+				functionsListBox.Items.Add(info);
+				if (selectedName == info.name) {
+					selectedIndex = i;
+				}
+				i++;
+			}
+			if (rememberSelectedIndex && selectedIndex != -1) {
+				functionsListBox.SelectedIndex = selectedIndex;
+			}
+		}
 
-    public void PopulateFunctionListBox(string name) {
-      name = name.ToUpper();
-      for (int i = 0; i < functionsListBox.Items.Count; i++) 
-        if (((SdfInfo)functionsListBox.Items[i]).name.ToUpper() == name) 
-          functionsListBox.SelectedIndex = i;
-    }
+		public void PopulateFunctionListBox(string name) {
+			name = name.ToUpper();
+			for (int i = 0; i < functionsListBox.Items.Count; i++) {
+				if (((SdfInfo)functionsListBox.Items[i]).name.ToUpper() == name) {
+					functionsListBox.SelectedIndex = i;
+				}
+			}
+		}
 
-    private void functionsListbox_DoubleClick(object sender, EventArgs e) {
-      RefreshInfo();
-    }
+		private void functionsListbox_DoubleClick(object sender, EventArgs e) { RefreshInfo(); }
 
-    private void RefreshInfo() {
-      if (functionsListBox.SelectedItem != null) {
-        SdfInfo info = (SdfInfo)functionsListBox.SelectedItem;
-        int minCol = info.outputCell.ca.col, minRow = info.outputCell.ca.row;
-        foreach (FullCellAddr cell in info.inputCells) {
-          minCol = Math.Min(minCol, cell.ca.col);
-          minRow = Math.Min(minRow, cell.ca.row);
-        }
-        gui.ChangeFocus(new FullCellAddr(info.outputCell.sheet, minCol, minRow));
-      }
-    }
+		private void RefreshInfo() {
+			if (functionsListBox.SelectedItem != null) {
+				SdfInfo info = (SdfInfo)functionsListBox.SelectedItem;
+				int minCol = info.outputCell.ca.col, minRow = info.outputCell.ca.row;
+				foreach (FullCellAddr cell in info.inputCells) {
+					minCol = Math.Min(minCol, cell.ca.col);
+					minRow = Math.Min(minRow, cell.ca.row);
+				}
+				gui.ChangeFocus(new FullCellAddr(info.outputCell.sheet, minCol, minRow));
+			}
+		}
 
-    private void ShowBytecode_Click(object sender, EventArgs e) {
-      if (functionsListBox.SelectedItem != null) {
-        SdfInfo info = (SdfInfo)functionsListBox.SelectedItem;
-        SdfManager.ShowIL(info);
-      }
-    }
-  }
+		private void ShowBytecode_Click(object sender, EventArgs e) {
+			if (functionsListBox.SelectedItem != null) {
+				SdfInfo info = (SdfInfo)functionsListBox.SelectedItem;
+				SdfManager.ShowIL(info);
+			}
+		}
+	}
 }

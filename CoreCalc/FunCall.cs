@@ -7,12 +7,12 @@ namespace Corecalc {
 	/// A FunCall expression is an operator application such as 1+$A$4 or a function
 	/// call such as RAND() or SIN(4*A$7) or SUM(B4:B52; 3) or IF(A1; A2; 1/A1).
 	/// </summary>
-	class FunCall : Expr {
-		public readonly Function function;   // Non-null
-		public readonly Expr[] es;           // Non-null, elements non-null
+	internal class FunCall : Expr {
+		public readonly Function function; // Non-null
+		public readonly Expr[] es; // Non-null, elements non-null
 
-		private FunCall(String name, params Expr[] es) 
-			: this(Function.Get(name), es) { }
+		private FunCall(String name, params Expr[] es)
+			: this(Function.Get(name), es) {}
 
 		private FunCall(Function function, Expr[] es) {
 			// Assert: function != null, all es[i] != null
@@ -22,27 +22,31 @@ namespace Corecalc {
 
 		public static Expr Make(String name, Expr[] es) {
 			Function function = Function.Get(name);
-			if (function == null)
+			if (function == null) {
 				function = Function.MakeUnknown(name);
-			for (int i = 0; i < es.Length; i++)
-				if (es[i] == null)
+			}
+			for (int i = 0; i < es.Length; i++) {
+				if (es[i] == null) {
 					es[i] = new Error("#SYNTAX");
-			if (name == "SPECIALIZE" && es.Length > 1)
+				}
+			}
+			if (name == "SPECIALIZE" && es.Length > 1) {
 				return new FunCall("SPECIALIZE", Make("CLOSURE", es));
-			else
+			}
+			else {
 				return new FunCall(function, es);
+			}
 		}
 
 		// Arguments are passed unevaluated to cater for non-strict IF 
 
-		public override Value Eval(Sheet sheet, int col, int row) {
-			return function.Applier(sheet, es, col, row);
-		}
+		public override Value Eval(Sheet sheet, int col, int row) { return function.Applier(sheet, es, col, row); }
 
 		public override Expr Move(int deltaCol, int deltaRow) {
 			Expr[] newEs = new Expr[es.Length];
-			for (int i = 0; i < es.Length; i++)
+			for (int i = 0; i < es.Length; i++) {
 				newEs[i] = es[i].Move(deltaCol, deltaRow);
+			}
 			return new FunCall(function, newEs);
 		}
 
@@ -57,9 +61,12 @@ namespace Corecalc {
 			return same ? this : new FunCall(function, newEs);
 		}
 
-		public override Adjusted<Expr> InsertRowCols(Sheet modSheet, bool thisSheet,
-													 int R, int N, int r, bool doRows) 
-		{
+		public override Adjusted<Expr> InsertRowCols(Sheet modSheet,
+													 bool thisSheet,
+													 int R,
+													 int N,
+													 int r,
+													 bool doRows) {
 			Expr[] newEs = new Expr[es.Length];
 			int upper = int.MaxValue;
 			bool same = true;
@@ -81,52 +88,59 @@ namespace Corecalc {
 			if (pre == 0) { // Not operator
 				sb.Append(function.name).Append("(");
 				for (int i = 0; i < es.Length; i++) {
-					if (i > 0)
+					if (i > 0) {
 						sb.Append(", ");
+					}
 					sb.Append(es[i].Show(col, row, 0, fo));
 				}
 				sb.Append(")");
-			} else { // Operator.  Assume es.Length is 1 or 2 
+			}
+			else { // Operator.  Assume es.Length is 1 or 2 
 				if (es.Length == 2) {
 					// If precedence lower than context, add parens
-					if (pre < ctxpre)
+					if (pre < ctxpre) {
 						sb.Append("(");
+					}
 					sb.Append(es[0].Show(col, row, pre, fo));
 					sb.Append(function.name);
 					// Only higher precedence right operands avoid parentheses
 					sb.Append(es[1].Show(col, row, pre + 1, fo));
-					if (pre < ctxpre)
+					if (pre < ctxpre) {
 						sb.Append(")");
-				} else if (es.Length == 1) {
+					}
+				}
+				else if (es.Length == 1) {
 					sb.Append(function.name == "NEG" ? "-" : function.name);
 					sb.Append(es[0].Show(col, row, pre, fo));
-				} else
+				}
+				else {
 					throw new ImpossibleException("Operator not unary or binary");
+				}
 			}
 			return sb.ToString();
 		}
 
-		internal override void VisitRefs(RefSet refSet, Action<CellRef> refAct, Action<CellArea> areaAct) 
-		{
-			foreach (Expr e in es)
+		internal override void VisitRefs(RefSet refSet, Action<CellRef> refAct, Action<CellArea> areaAct) {
+			foreach (Expr e in es) {
 				e.VisitRefs(refSet, refAct, areaAct);
+			}
 		}
 
 		public override void DependsOn(FullCellAddr here, Action<FullCellAddr> dependsOn) {
-			foreach (Expr e in es)
+			foreach (Expr e in es) {
 				e.DependsOn(here, dependsOn);
+			}
 		}
 
 		public override bool IsVolatile {
 			get {
-				if (function.IsVolatile(es))
+				if (function.IsVolatile(es)) {
 					return true;
+				}
 				return es.Any(e => e.IsVolatile);
 			}
 		}
 
-		internal override void VisitorCall(IExpressionVisitor visitor) {
-			visitor.CallVisitor(this);
-		}
+		internal override void VisitorCall(IExpressionVisitor visitor) { visitor.CallVisitor(this); }
 	}
 }

@@ -29,59 +29,67 @@ using System.Diagnostics;
 using System.IO;
 
 namespace Corecalc.Benchmarks {
-  public class Benchmarks {
-    private TextWriter tw;
-    public bool useLog;
+	public class Benchmarks {
+		private TextWriter tw;
+		public bool useLog;
 
-    public Benchmarks(bool useLog) {
-      this.useLog = useLog;
-    }
+		public Benchmarks(bool useLog) { this.useLog = useLog; }
 
-    private TextWriter Tw {
-      get {
-        if (tw == null)
-          tw = new StreamWriter("benchmark_results.txt");
-        return tw;
-      }
-    }
+		private TextWriter Tw {
+			get {
+				if (tw == null) {
+					tw = new StreamWriter("benchmark_results.txt");
+				}
+				return tw;
+			}
+		}
 
-    public void BenchmarkRecalculation(WorkbookForm wf, int runs) {
-      BenchmarkWorkbook(wf, runs, "Workbook standard recalculation", 
-        wf.Workbook.Recalculate);
-    }
+		public void BenchmarkRecalculation(WorkbookForm wf, int runs) {
+			BenchmarkWorkbook(wf,
+							  runs,
+							  "Workbook standard recalculation",
+							  wf.Workbook.Recalculate);
+		}
 
-    public void BenchmarkRecalculationFull(WorkbookForm wf, int runs) {
-      BenchmarkWorkbook(wf, runs, "Workbook full recalculation", 
-        wf.Workbook.RecalculateFull);
-    }
+		public void BenchmarkRecalculationFull(WorkbookForm wf, int runs) {
+			BenchmarkWorkbook(wf,
+							  runs,
+							  "Workbook full recalculation",
+							  wf.Workbook.RecalculateFull);
+		}
 
-    public void BenchmarkRecalculationFullRebuild(WorkbookForm wf, int runs) {
-      BenchmarkWorkbook(wf, runs, "Workbook full recalculation rebuild", 
-        wf.Workbook.RecalculateFullRebuild);
-    }
+		public void BenchmarkRecalculationFullRebuild(WorkbookForm wf, int runs) {
+			BenchmarkWorkbook(wf,
+							  runs,
+							  "Workbook full recalculation rebuild",
+							  wf.Workbook.RecalculateFullRebuild);
+		}
 
-    private void BenchmarkWorkbook(WorkbookForm wf, int runs, string benchmarkName, Func<long> benchmark) {
-      Log("=== Benchmark workbook called: ");
+		private void BenchmarkWorkbook(WorkbookForm wf, int runs, string benchmarkName, Func<long> benchmark) {
+			Log("=== Benchmark workbook called: ");
 
-      Stopwatch stopwatch = new Stopwatch();
-      stopwatch.Reset();
-      stopwatch.Start();
-      for (int i = 0; i < runs; i++)
-        benchmark();
-      stopwatch.Stop();
-      double average = stopwatch.ElapsedMilliseconds / (double)runs;
-      Log(String.Format("[{0}] Average of the {1} runs: {2:N2} ms",
-                        benchmarkName, runs, average));
-      wf.SetStatusLine((long)(average + 0.5));
-    }
+			Stopwatch stopwatch = new Stopwatch();
+			stopwatch.Reset();
+			stopwatch.Start();
+			for (int i = 0; i < runs; i++) {
+				benchmark();
+			}
+			stopwatch.Stop();
+			double average = stopwatch.ElapsedMilliseconds/(double)runs;
+			Log(String.Format("[{0}] Average of the {1} runs: {2:N2} ms",
+							  benchmarkName,
+							  runs,
+							  average));
+			wf.SetStatusLine((long)(average + 0.5));
+		}
 
-    //log both a flat file and console
-    private void Log(string s) {
-      if (useLog) {
-        Console.WriteLine(s);
-        Tw.WriteLine(s);
-        Tw.Flush();
-      }
-    }
-  }
+		//log both a flat file and console
+		private void Log(string s) {
+			if (useLog) {
+				Console.WriteLine(s);
+				Tw.WriteLine(s);
+				Tw.Flush();
+			}
+		}
+	}
 }

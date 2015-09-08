@@ -6,8 +6,7 @@ namespace Corecalc {
 	/// Machinery to store objects of type T for later access via an integer index.
 	/// </summary>
 	/// <typeparam name="T">The type of item stored in the array</typeparam>
-
-	sealed class ValueTable<T> where T : IEquatable<T> {
+	internal sealed class ValueTable<T> where T : IEquatable<T> {
 		private readonly IDictionary<T, int> dict = new Dictionary<T, int>();
 		private readonly IList<T> array = new List<T>();
 
