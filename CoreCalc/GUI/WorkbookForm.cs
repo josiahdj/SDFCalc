@@ -24,27 +24,30 @@
 // ----------------------------------------------------------------------
 
 using System;
-using System.Diagnostics;
-using System.Drawing; // Size
-// Pen etc
+using System.Drawing;
 using System.Windows.Forms;
 
-using Corecalc.GUI;
-using Corecalc.IO;
+using Corecalc;
 using Corecalc.Funcalc;
+using Corecalc.IO;
 
 using CoreCalc.CellAddressing;
+using CoreCalc.IO;
 using CoreCalc.Types;
+
+using NotImplementedException = CoreCalc.Types.NotImplementedException;
+// Size
+// Pen etc
 
 // SdfManager
 
-namespace Corecalc {
+namespace CoreCalc.GUI {
 	/// <summary>
 	/// A WorkbookForm is the user interface of an open workbook. 
 	/// </summary>
 	public partial class WorkbookForm : Form {
 		public Workbook Workbook { get; private set; }
-		private Benchmarks.Benchmarks test;
+		private Corecalc.Benchmarks.Benchmarks test;
 		public int precedentsDepth, dependentsDepth;
 
 		public WorkbookForm(Workbook workbook, bool display) {
@@ -68,12 +71,12 @@ namespace Corecalc {
 		}
 
 		private void SetWorkbook(Workbook newWorkbook) {
-			if (this.Workbook != null) {
-				this.Workbook.Clear();
-				this.Workbook.OnFunctionsAltered -= workbook_OnFunctionsAltered;
+			if (Workbook != null) {
+				Workbook.Clear();
+				Workbook.OnFunctionsAltered -= workbook_OnFunctionsAltered;
 			}
-			this.Workbook = newWorkbook;
-			this.Workbook.OnFunctionsAltered += workbook_OnFunctionsAltered;
+			Workbook = newWorkbook;
+			Workbook.OnFunctionsAltered += workbook_OnFunctionsAltered;
 		}
 
 		private void workbook_OnFunctionsAltered(String[] functions) {
@@ -81,7 +84,7 @@ namespace Corecalc {
 			SdfManager.Regenerate(functions);
 		}
 
-		private void exitToolStripMenuItem_Click(object sender, EventArgs e) { System.Environment.Exit(0); }
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e) { Environment.Exit(0); }
 
 		private void aboutToolStripMenuItem1_Click(object sender, EventArgs e) {
 			Form aboutBox = new AboutBox();
@@ -148,14 +151,12 @@ namespace Corecalc {
 		private void recalculateFullRebuildMenuItem_Click(object sender, EventArgs e) { RecalculateFullRebuild(); }
 
 		private void Reshow(long? elapsed) {
-			if (SelectedSheet != null) {
-				SelectedSheet.Reshow();
-			}
+			SelectedSheet?.Reshow();
 			SetStatusLine(elapsed);
 		}
 
 		public void SetStatusLine(long? elapsed) {
-			double memory = System.GC.GetTotalMemory(false)/1E6; // In MB
+			double memory = GC.GetTotalMemory(false)/1E6; // In MB
 			statusLine.Text = String.Format("{0,-4}  {1,8:F2} MB  {2,8:D}",
 											Workbook.format.RefFmt,
 											memory,
@@ -179,57 +180,36 @@ namespace Corecalc {
 
 		// Copy cell
 		private void copyToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.Copy();
-			}
+			SelectedSheet?.Copy();
 		}
 
 		// Delete cell
 		private void deleteToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.Delete();
-			}
+			SelectedSheet?.Delete();
 		}
 
 		// Insert column
 		private void columnToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.InsertColumns(1);
-			}
+			SelectedSheet?.InsertColumns(1);
 		}
 
 		// Insert row
 		private void rowToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.InsertRows(1);
-			}
+			SelectedSheet?.InsertRows(1);
 		}
 
 		// Paste copied or cut cells, or text
 		private void pasteToolStripMenuItem_Click(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.Paste();
-			}
+			SelectedSheet?.Paste();
 		}
 
 		// Get selected sheet if any, else null
-		private SheetTab SelectedSheet {
-			get { return sheetHolder.TabCount > 0 ? sheetHolder.SelectedTab as SheetTab : null; }
-		}
+		private SheetTab SelectedSheet => sheetHolder.TabCount > 0 ? sheetHolder.SelectedTab as SheetTab : null;
 
-		public Benchmarks.Benchmarks Test {
-			get {
-				if (test == null) {
-					test = new Benchmarks.Benchmarks(true);
-				}
-				return test;
-			}
-		}
+		public Corecalc.Benchmarks.Benchmarks Test => test ?? (test = new Corecalc.Benchmarks.Benchmarks(true));
 
 		private void formulaBox_TextChanged(object sender, EventArgs e) {
-			if (SelectedSheet != null) {
-				SelectedSheet.ChangeCurrentText(formulaBox.Text);
-			}
+			SelectedSheet?.ChangeCurrentText(formulaBox.Text);
 		}
 
 		private void formulaBox_KeyPress(object sender, KeyPressEventArgs e) {
@@ -260,6 +240,21 @@ namespace Corecalc {
 			}
 		}
 
+		private void openWorkbookToolStripMenuItem_Click(object sender, EventArgs e) {
+			var dbWorkbookIO = new DbIOFormat();
+			Clear();
+			var wb = dbWorkbookIO.Read();
+			if (wb != null) {
+				SetWorkbook(wb);
+				DisplayWorkbook();
+			}
+		}
+
+		private void saveWorkbookToolStripMenuItem_Click(object sender, EventArgs e) {
+			// TODO: save the workbook back to the DB
+			throw new NotImplementedException("'Save' doesn't do anything, yet.");
+		}
+
 		private void DisplayWorkbook() {
 			if (Workbook != null) {
 				foreach (Sheet sheet in Workbook) {
@@ -275,27 +270,27 @@ namespace Corecalc {
 		public void Clear() { sheetHolder.TabPages.Clear(); }
 
 		private void benchmarkStandardRecalculation_Click(object sender, EventArgs e) {
-			int runs = 0;
+			int runs;
 			if (int.TryParse(numberOfRunsTextBox.Text, out runs)) {
 				Test.BenchmarkRecalculation(this, runs);
 			}
 		}
 
 		private void fullRecalculationMenuItem_Click(object sender, EventArgs e) {
-			int runs = 0;
+			int runs;
 			if (int.TryParse(numberOfRunsTextBox.Text, out runs)) {
 				Test.BenchmarkRecalculationFull(this, runs);
 			}
 		}
 
 		private void recalculationFullRebuildMenuItem_Click(object sender, EventArgs e) {
-			int runs = 0;
+			int runs;
 			if (int.TryParse(numberOfRunsTextBox.Text, out runs)) {
 				Test.BenchmarkRecalculationFullRebuild(this, runs);
 			}
 		}
 
-		private void newFunctionSheetMenuItem_Click(object sender, EventArgs e) { this.InsertSheet(functionSheet: true); }
+		private void newFunctionSheetMenuItem_Click(object sender, EventArgs e) { InsertSheet(functionSheet: true); }
 
 		private void sheetHolder_DrawItem(object sender, DrawItemEventArgs e) {
 			int currentIndex = e.Index;
@@ -305,8 +300,7 @@ namespace Corecalc {
 
 			Sheet currentSheet = Workbook[currentIndex];
 			Brush theBrush = new SolidBrush(Color.Black);
-			StringFormat sf = new StringFormat();
-			sf.Alignment = StringAlignment.Center;
+			StringFormat sf = new StringFormat {Alignment = StringAlignment.Center};
 			Color col = currentSheet.IsFunctionSheet ? Color.LightPink : tp.BackColor;
 			g.FillRectangle(new SolidBrush(col), e.Bounds);
 			g.DrawString(currentSheet.Name, tc.Font, theBrush, e.Bounds, sf);
@@ -374,9 +368,7 @@ namespace Corecalc {
 
 		private void eraseArrowsToolStripMenuItem_Click(object sender, EventArgs e) {
 			precedentsDepth = dependentsDepth = 0;
-			if (SelectedSheet != null) {
-				SelectedSheet.Refresh();
-			}
+			SelectedSheet?.Refresh();
 		}
 
 		private void cutToolStripMenuItem_Click(object sender, EventArgs e) {

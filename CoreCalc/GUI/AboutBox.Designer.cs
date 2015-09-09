@@ -1,4 +1,4 @@
-namespace Corecalc {
+namespace CoreCalc.GUI {
   partial class AboutBox {
     /// <summary>
     /// Required designer variable.

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Corecalc;
 using Corecalc.Funcalc;
 
 using CoreCalc.CellAddressing;
 using CoreCalc.Cells;
 
-namespace Corecalc {
+namespace CoreCalc.GUI {
 	/// <summary>
 	/// A SheetTab is a displayed sheet, shown as a tab page on the 
 	/// workbook's tab control.

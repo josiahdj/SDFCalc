@@ -1,4 +1,4 @@
-namespace Corecalc.GUI
+namespace CoreCalc.GUI
 {
     partial class SdfForm
     {

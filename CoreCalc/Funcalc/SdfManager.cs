@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using CoreCalc.CellAddressing;
+using CoreCalc.GUI;
 using CoreCalc.Values;
 
 namespace Corecalc.Funcalc {
@@ -195,7 +196,7 @@ namespace Corecalc.Funcalc {
 				}
 				sdfInfos[sdfInfo.index] = sdfInfo;
 				// Update SDF function listbox if created and visible 
-				GUI.SdfForm sdfForm = System.Windows.Forms.Application.OpenForms["sdf"] as GUI.SdfForm;
+				SdfForm sdfForm = System.Windows.Forms.Application.OpenForms["sdf"] as SdfForm;
 				if (sdfForm != null && sdfForm.Visible) {
 					sdfForm.PopulateFunctionListBox(false);
 					sdfForm.PopulateFunctionListBox(name);

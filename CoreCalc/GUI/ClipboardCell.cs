@@ -2,7 +2,7 @@ using System;
 
 using CoreCalc.CellAddressing;
 
-namespace Corecalc {
+namespace CoreCalc.GUI {
 	/// <summary>
 	/// A ClipboardCell is a copied cell and its cell address for holding 
 	/// in the MS Windows clipboard.

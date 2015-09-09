@@ -24,20 +24,16 @@
 // ----------------------------------------------------------------------
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
+using Corecalc;
 using Corecalc.Funcalc;
 
 using CoreCalc.CellAddressing;
 
 // SdfInfo, SdfManager
 
-namespace Corecalc.GUI {
+namespace CoreCalc.GUI {
 	public partial class SdfForm : Form {
 		private WorkbookForm gui;
 

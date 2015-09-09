@@ -92,6 +92,7 @@
     <Compile Include="GUI\SheetTab.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IO\DbIOFormat.cs" />
     <Compile Include="SheetRep.cs" />
     <Compile Include="Values\ArrayDouble.cs" />
     <Compile Include="Values\ArrayExplicit.cs" />

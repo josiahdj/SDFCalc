@@ -29,6 +29,8 @@ using System.IO;
 
 using Corecalc.IO;
 
+using CoreCalc.GUI;
+
 namespace Corecalc {
 	/// <summary>
 	/// Class Program contains the Main function to start the GUI version of
