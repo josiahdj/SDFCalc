@@ -29,6 +29,7 @@ using System.Diagnostics;
 using SC = System.Collections;
 
 using System.Collections.Generic;
+using System.Linq;
 
 using Corecalc.Funcalc;
 
@@ -75,19 +76,12 @@ namespace Corecalc {
 
 		public Sheet this[String name] {
 			get {
-				name = name.ToUpper();
-				foreach (Sheet sheet in sheets) {
-					if (sheet.Name.ToUpper() == name) {
-						return sheet;
-					}
-				}
-				return null;
+				var upperName = name.ToUpper();
+				return sheets.FirstOrDefault(sheet => sheet.Name.ToUpper() == upperName);
 			}
 		}
 
-		public Sheet this[int i] {
-			get { return sheets[i]; }
-		}
+		public Sheet this[int i] => sheets[i];
 
 		// Recalculate from recalculation roots only, using their supported sets
 		public long Recalculate() {
@@ -163,8 +157,9 @@ namespace Corecalc {
 			}
 			catch (Exception exn) {
 				ResetCellState(); // Mark all cells Dirty
-				if (exn is CyclicException) {
-					Cyclic = exn as CyclicException;
+				var cyclicException = exn as CyclicException;
+				if (cyclicException != null) {
+					Cyclic = cyclicException;
 				}
 				else {
 					Console.WriteLine("BAD: {0}", exn);
@@ -226,20 +221,14 @@ namespace Corecalc {
 			}
 		}
 
-		public int SheetCount {
-			get { return sheets.Count; }
-		}
+		public int SheetCount => sheets.Count;
 
 		IEnumerator<Sheet> IEnumerable<Sheet>.GetEnumerator() {
-			foreach (Sheet sheet in sheets) {
-				yield return sheet;
-			}
+			return ((IEnumerable<Sheet>)sheets).GetEnumerator();
 		}
 
 		SC.IEnumerator SC.IEnumerable.GetEnumerator() {
-			foreach (Sheet sheet in sheets) {
-				yield return sheet;
-			}
+			return sheets.GetEnumerator();
 		}
 
 		public void Clear() {

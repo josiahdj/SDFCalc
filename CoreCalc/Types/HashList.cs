@@ -11,9 +11,7 @@ namespace CoreCalc.Types {
 
 		public bool Contains(T item) { return set.Contains(item); }
 
-		public int Count {
-			get { return seq.Count; }
-		}
+		public int Count => seq.Count;
 
 		public bool Add(T item) {
 			if (set.Contains(item)) {
@@ -41,29 +39,22 @@ namespace CoreCalc.Types {
 
 		public static HashList<T> Intersection(HashList<T> ha1, HashList<T> ha2) {
 			HashList<T> result = new HashList<T>();
-			foreach (T x in ha1) {
-				if (ha2.Contains(x)) {
-					result.Add(x);
-				}
+			foreach (var x in ha1.Where(ha2.Contains)) {
+				result.Add(x);
 			}
 			return result;
 		}
 
 		public static HashList<T> Difference(HashList<T> ha1, HashList<T> ha2) {
 			HashList<T> result = new HashList<T>();
-			foreach (T x in ha1) {
-				if (!ha2.Contains(x)) {
-					result.Add(x);
-				}
+			foreach (T x in ha1.Where(x => !ha2.Contains(x))) {
+				result.Add(x);
 			}
 			return result;
 		}
 
 		public bool UnsequencedEquals(HashList<T> that) {
-			if (Count != that.Count) {
-				return false;
-			}
-			return seq.All(x => that.set.Contains(x));
+			return Count == that.Count && seq.All(x => that.set.Contains(x));
 		}
 
 		public T[] ToArray() { return seq.ToArray(); }

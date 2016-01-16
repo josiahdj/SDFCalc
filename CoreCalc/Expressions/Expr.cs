@@ -91,8 +91,8 @@ namespace CoreCalc.Expressions {
 		// Apply act, once only, to the full cell address of each cell referred from expression
 		public void ForEachReferred(Sheet sheet, int col, int row, Action<FullCellAddr> act) {
 			VisitRefs(new RefSet(),
-					  (CellRef cellRef) => act(cellRef.GetAbsoluteAddr(sheet, col, row)),
-					  (CellArea areaRef) => areaRef.ApplyToFcas(sheet, col, row, act));
+					  cellRef => act(cellRef.GetAbsoluteAddr(sheet, col, row)),
+					  areaRef => areaRef.ApplyToFcas(sheet, col, row, act));
 		}
 
 		// Call dependsOn(fca) on all cells fca referred from expression, with multiplicity.

@@ -22,9 +22,7 @@ namespace CoreCalc.CellAddressing {
 
 		public override bool Contains(Sheet sheet, int col, int row) { return this.sheet == sheet && this.col == col && this.row == row; }
 
-		public override int Count {
-			get { return 1; }
-		}
+		public override int Count => 1;
 
 		public override string ToString() { return new FullCellAddr(sheet, col, row).ToString(); }
 	}

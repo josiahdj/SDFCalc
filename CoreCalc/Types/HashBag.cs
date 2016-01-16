@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace CoreCalc.Types {
 	public class HashBag<T> : IEnumerable<T> {
-		// Invariant: foreach (k,v) in multiplicity, v>0
+		// Invariant: for each (k,v) in multiplicity, v > 0
 		private readonly IDictionary<T, int> multiplicity = new Dictionary<T, int>();
 
 		public bool Add(T item) {

@@ -218,3 +218,5 @@ _Pvt_Extensions
 CoreCalc/Funcalc.exe.config
 **.vshost.**
 CoreCalc/Microsoft.VisualStudio.DebuggerVisualizers.xml
+FSharpWeb1/
+AspNetHostWithRazor1/

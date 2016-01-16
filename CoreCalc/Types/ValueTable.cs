@@ -20,8 +20,6 @@ namespace CoreCalc.Types {
 			return index;
 		}
 
-		public T this[int index] {
-			get { return array[index]; }
-		}
+		public T this[int index] => array[index];
 	}
 }
